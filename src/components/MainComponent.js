@@ -15,6 +15,11 @@ class MainComponent extends React.Component {
     // Steps: 0,1,2,3
     this.state = { step: 0, disabled: false }
     this.addRskMainnet = props.addRskMainnet.bind(this)
+    this.isMetaMaskInstalled = props.isMetaMaskInstalled.bind(this)
+
+    if (this.isMetaMaskInstalled()) {
+      this.state = { step: 1, disabled: false }
+    }
   }
 
   toConnection () {
@@ -52,8 +57,8 @@ class MainComponent extends React.Component {
             <br/>
             <p className="toolExplanation">Use this tool to connect your Metamask browser wallet to the RSK network. After this steps you will be able to send tokens and connect to dapps.</p>
 
-            <DownloadComponent step={this.state.step} disabled={this.state.step} onChildComponentClick={this.toConnection.bind(this)}/>
-            <ConnectionComponent step={this.state.step} onChildComponentClick={this.toNetwork.bind(this)} />
+            <DownloadComponent step={this.state.step} isMetaMaskInstalled={this.isMetaMaskInstalled.bind(this)} onChildComponentClick={this.toConnection.bind(this)}/>
+            <ConnectionComponent step={this.state.step} isMetaMaskInstalled={this.isMetaMaskInstalled.bind(this)} onChildComponentClick={this.toNetwork.bind(this)} />
             <NetworkComponent step={this.state.step} onChildComponentClick={this.toTokens.bind(this)} />
             <TokensComponent step={this.state.step} />
           </Col>

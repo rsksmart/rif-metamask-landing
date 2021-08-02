@@ -79,10 +79,15 @@ function App () {
       }
     })
 
+  const isMetaMaskInstalled = () => {
+    const { ethereum } = window
+    return Boolean(ethereum && ethereum.isMetaMask)
+  }
+
   return (
     <Container>
       <div className="App">
-        <MainComponent addRSKTestnet={addRskTestnet} addRskMainnet={addRskMainnet} addTestnetRifToken={addTestnetRifToken}/>
+        <MainComponent isMetaMaskInstalled={isMetaMaskInstalled} addRSKTestnet={addRskTestnet} addRskMainnet={addRskMainnet} addTestnetRifToken={addTestnetRifToken}/>
         <FooterComponent/>
       </div>
     </Container>
