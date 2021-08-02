@@ -3,8 +3,8 @@ import './App.scss'
 import {
   Container
 } from 'react-bootstrap'
-import MainComponent from './app/components/MainComponent'
-import FooterComponent from './app/components/FooterComponent'
+import MainComponent from './components/MainComponent'
+import FooterComponent from './components/FooterComponent'
 
 declare const window: any
 
@@ -82,7 +82,7 @@ function App () {
   return (
     <Container>
       <div className="App">
-        <MainComponent/>
+        <MainComponent addRSKTestnet={addRskTestnet} addRskMainnet={addRskMainnet} addTestnetRifToken={addTestnetRifToken}/>
         <FooterComponent/>
       </div>
     </Container>
