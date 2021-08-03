@@ -14,7 +14,6 @@ class MainComponent extends React.Component {
     super(props)
     // Steps: 0,1,2,3
     this.state = { step: 0, disabled: false }
-    this.addRskMainnet = props.addRskMainnet.bind(this)
     this.isMetaMaskInstalled = props.isMetaMaskInstalled.bind(this)
 
     if (this.isMetaMaskInstalled()) {

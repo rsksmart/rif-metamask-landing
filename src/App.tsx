@@ -81,13 +81,13 @@ function App () {
 
   const isMetaMaskInstalled = () => {
     const { ethereum } = window
-    return Boolean(ethereum && ethereum.isMetaMask)
+    return Boolean(ethereum && ethereum.isMetaMask && !ethereum.isNiftyWallet)
   }
 
   return (
     <Container>
       <div className="App">
-        <MainComponent isMetaMaskInstalled={isMetaMaskInstalled} addRSKTestnet={addRskTestnet} addRskMainnet={addRskMainnet} addTestnetRifToken={addTestnetRifToken}/>
+        <MainComponent isMetaMaskInstalled={isMetaMaskInstalled} addNetwork={addNetwork} />
         <FooterComponent/>
       </div>
     </Container>

@@ -110,7 +110,6 @@ $white-color: #ffffff;
     color: #008FF7;
     
     border: 1px solid #008FF7;
-    width: 45%;
     border-radius: 30px;
     background-color: #FFFFFF;
     padding: 1% 10% 1% 10% ;
@@ -125,7 +124,6 @@ $white-color: #ffffff;
     color: grey;
     
     border: 1px solid grey;
-    width: 45%;
     border-radius: 30px;
     background-color: #FFFFFF;
     padding: 1% 10% 1% 10% ;
@@ -201,7 +199,7 @@ $white-color: #ffffff;
   .mainImage {
     border-radius: 50%;
 
-    background: url(./img/bitcoinHand.png);
+    background: url('./img/bitcoinHand.png');
   }
 
   .mainImageCircle {
