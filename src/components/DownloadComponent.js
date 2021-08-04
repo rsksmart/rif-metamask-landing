@@ -5,7 +5,7 @@ import { isMetaMaskInstalled } from '../commons/metamask'
 class DownloadComponent extends React.Component {
   constructor (props) {
     super(props)
-    this.onChildComponentClick = props.onChildComponentClick.bind(this)  
+    this.onChildComponentClick = props.onChildComponentClick.bind(this)
     if (isMetaMaskInstalled()) {
       this.setState({
         step: 1
