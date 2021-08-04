@@ -8,8 +8,8 @@ class TokensComponent extends React.Component {
     return (
       <Container>
         <Row>
-          <Col md={{ span: 1, offset: 1 }} className="bulletRight" >
-            <span className="bullet4">4</span>
+          <Col md={{ span: 1, offset: 1 }} >
+            <span className="bullet">4</span>
           </Col>
           <Col md={{ span: 8, offset: 12 }}>
             <h2 className="step" >Add the RSK tokens! Click below to add the Mainnet RSK compatible tokens. </h2>

@@ -31,48 +31,11 @@ $white-color: #ffffff;
     margin-bottom: 3%;
   }
 
-  .bulletRight {
-    text-align: right;
-  }
-
   .marginNextStep {
     margin-bottom: 5%;
   }
 
-  .bullet1 {
-    font-size: 16px;
-    text-align: center;
-    color: #008FF7;
-    
-    border: 1px solid #008FF7;
-    box-sizing: border-box;
-    border-radius: 3px;
-    padding: 10%;
-  }
-
-  .bullet2 {
-    font-size: 16px;
-    text-align: center;
-    color: #008FF7;
-    
-    border: 1px solid #008FF7;
-    box-sizing: border-box;
-    border-radius: 3px;
-    padding: 10%;
-  }
-
-  .bullet3 {
-    font-size: 16px;
-    text-align: center;
-    color: #008FF7;
-    
-    border: 1px solid #008FF7;
-    box-sizing: border-box;
-    border-radius: 3px;
-    padding: 10%;
-  }
-
-  .bullet4 {
+  .bullet {
     font-size: 16px;
     text-align: center;
     color: #008FF7;
@@ -84,17 +47,6 @@ $white-color: #ffffff;
   }
 
   .buttonDownloadMeta {
-    font-size: 16px;
-    text-align: center;
-    color: #008FF7;
-    
-    border: 1px solid #008FF7;
-    box-sizing: border-box;
-    border-radius: 30px;
-    background-color: #FFFFFF;
-  }
-
-  .buttonConnect {
     font-size: 16px;
     text-align: center;
     color: #008FF7;
