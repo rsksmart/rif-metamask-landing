@@ -8,8 +8,31 @@ import ConnectionComponent from './ConnectionComponent'
 import DownloadComponent from './DownloadComponent'
 import NetworkComponent from './NetworkComponent'
 import TokensComponent from './TokensComponent'
-
 class MainComponent extends React.Component {
+  constructor (props) {
+    super(props)
+    // Steps: 0,1,2,3
+    this.state = { step: 0, disabled: false }
+  }
+
+  toConnection () {
+    this.setState({
+      step: 1
+    })
+  }
+
+  toNetwork () {
+    this.setState({
+      step: 2
+    })
+  }
+
+  toTokens () {
+    this.setState({
+      step: 3
+    })
+  }
+
   render () {
     return (
       <Container>
@@ -27,10 +50,10 @@ class MainComponent extends React.Component {
             <br/>
             <p className="toolExplanation">Use this tool to connect your Metamask browser wallet to the RSK network. After this steps you will be able to send tokens and connect to dapps.</p>
 
-            <DownloadComponent/>
-            <ConnectionComponent/>
-            <NetworkComponent/>
-            <TokensComponent/>
+            <DownloadComponent step={this.state.step} onChildComponentClick={this.toConnection.bind(this)}/>
+            <ConnectionComponent step={this.state.step} onChildComponentClick={this.toNetwork.bind(this)} />
+            <NetworkComponent step={this.state.step} onChildComponentClick={this.toTokens.bind(this)} />
+            <TokensComponent step={this.state.step} />
           </Col>
           <Col>
             <Image className="mainImage" src={bitcoinHandImage} />

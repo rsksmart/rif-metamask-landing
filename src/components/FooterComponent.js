@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap'
 import logo from '../img/logo-footer.svg'
 
-import { version } from '../../../package.json'
+import { version } from '../../package.json'
 
 const FooterComponent = () => {
   return (
