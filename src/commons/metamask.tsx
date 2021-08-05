@@ -75,16 +75,13 @@ export const isMetaMaskInstalled = () => {
   return Boolean(ethereum && ethereum.isMetaMask && !ethereum.isNiftyWallet)
 }
 
-export const handleConection = () => {
-  return window.ethereum
-    .request({
-      method: 'eth_requestAccounts'
-    }).then((response: any) => {
-      console.log(response)
-      return response
-    })
-    .catch((err: string) => console.log(err))
-}
+export const getAccounts = () => window.ethereum.request({ method: 'eth_requestAccounts' })
+export const getChainId = () => window.ethereum.request({ method: 'eth_chainId' })
+
+export const handleConection = () => Promise.all([
+  window.ethereum.request({ method: 'eth_requestAccounts' }).then((accounts: string[]) => accounts[0]),
+  window.ethereum.request({ method: 'eth_chainId' }),
+])
 
 export const handleAccounts = () => {
   window.ethereum
