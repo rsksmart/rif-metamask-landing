@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-
-class TokensComponent extends React.Component {
+import { addTestnetRifToken } from '../commons/metamask'
+class TokensComponent extends Component {
   props = { step: Number }
 
   render () {
@@ -15,14 +15,13 @@ class TokensComponent extends React.Component {
             <h2 className="step" >Add the RSK tokens! Click below to add the Mainnet RSK compatible tokens. </h2>
             <Row>
               <Col>
-                <button className="buttonAddToken" disabled={this.props.step !== 3}>Add RIF Token</button>
+                <button className="buttonAddToken" onClick={addTestnetRifToken} >Add RIF Token</button>
               </Col>
               <Col>
-                <button className="buttonAddToken" disabled={this.props.step !== 3}>Add DOC Token</button>
-                <button className="buttonAddToken" disabled={this.props.step !== 3}>+ More Tokens</button>
+                <button className="buttonAddToken" >Add DOC Token</button>
               </Col>
               <Col>
-                <button className="buttonAddToken" disabled={this.props.step !== 3}>Add BPRO Token</button>
+                <button className="buttonAddToken" >Add BPRO Token</button>
               </Col>
             </Row>
           </Col>

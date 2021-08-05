@@ -1,29 +1,37 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   Container, Image, Col, Row
 } from 'react-bootstrap'
 import bitcoinHandImage from '../img/bitcoinHand.png'
-import rskLogo from '../img/logoColor.svg'
-import ConnectionComponent from './ConnectionComponent'
+import FooterComponent from './FooterComponent'
+import HeaderComponent from './HeaderComponent'
+import { handleConection } from '../commons/metamask'
 import DownloadComponent from './DownloadComponent'
+import ConnectionComponent from './ConnectionComponent'
 import NetworkComponent from './NetworkComponent'
 import TokensComponent from './TokensComponent'
-class MainComponent extends React.Component {
+
+class MainComponent extends Component {
   constructor (props) {
     super(props)
     // Steps: 0,1,2,3
-    this.state = { step: 0, disabled: false }
+    this.state = { step: 0, net: null, address: null }
+    this.toConnection = this.toConnection.bind(this)
+    this.toNetwork = this.toNetwork.bind(this)
+    this.toTokens = this.toTokens.bind(this)
   }
 
-  toConnection () {
+  async toConnection () {
+    const aux = await handleConection()
+    console.log(aux)
     this.setState({
-      step: 1
+      step: 1, net: '', address: aux[0]
     })
   }
 
-  toNetwork () {
+  async toNetwork () {
     this.setState({
-      step: 2
+      step: 2, net: '', address: await handleConection()
     })
   }
 
@@ -37,9 +45,7 @@ class MainComponent extends React.Component {
     return (
       <Container>
         <Row>
-          <Col>
-            <Image className="rskLogo" src={rskLogo} />
-          </Col>
+          <HeaderComponent address={this.state.address}/>
         </Row>
         <Row>
           <Col md={7}>
@@ -50,8 +56,8 @@ class MainComponent extends React.Component {
             <br/>
             <p className="toolExplanation">Use this tool to connect your Metamask browser wallet to the RSK network. After this steps you will be able to send tokens and connect to dapps.</p>
 
-            <DownloadComponent step={this.state.step} onChildComponentClick={this.toConnection.bind(this)}/>
-            <ConnectionComponent step={this.state.step} onChildComponentClick={this.toNetwork.bind(this)} />
+            <DownloadComponent step={this.state.step} />
+            <ConnectionComponent step={this.state.step} onChildComponentClick={this.toNetwork} />
             <NetworkComponent step={this.state.step} onChildComponentClick={this.toTokens.bind(this)} />
             <TokensComponent step={this.state.step} />
           </Col>
@@ -59,6 +65,7 @@ class MainComponent extends React.Component {
             <Image className="mainImage" src={bitcoinHandImage} />
           </Col>
         </Row>
+        <FooterComponent />
       </Container>
     )
   }

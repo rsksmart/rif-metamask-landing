@@ -1,19 +1,12 @@
-import React, { useState } from 'react'
-
 declare const window: any
 
 export const addNetwork = (params: any) =>
   window.ethereum.request({ method: 'wallet_addEthereumChain', params })
     .then(() => {
-      const [chainId, setChainId] = useState<number | null>(null)
-      const [log, setLog] = useState<string[]>([])
-      setLog([...log, `Switched to ${params[0].chainName} (${parseInt(params[0].chainId)})`])
-      setChainId(parseInt(params[0].chainId))
+      console.log(`Switched to ${params[0].chainName} (${parseInt(params[0].chainId)})`)
     })
     .catch((error: Error) => {
-      const [chainId, setChainId] = useState<number | null>(null)
-      const [log, setLog] = useState<string[]>([])
-      setLog([...log, `Error: ${error.message}`])
+      console.log(`Error: ${error.message}`)
     })
 
 export const addRskTestnet = () =>
@@ -48,27 +41,12 @@ export const addRskMainnet = () =>
 
 export const addToken = (params: any) =>
   window.ethereum.request({ method: 'wallet_watchAsset', params })
-    .then(() => {
-      const [chainId, setChainId] = useState<number | null>(null)
-      const [log, setLog] = useState<string[]>([])
-      setLog([...log, 'Success, Token added!'])
+    .then((response: any) => {
+      console.log(response)
     })
     .catch((error: Error) => {
-      const [chainId, setChainId] = useState<number | null>(null)
-      const [log, setLog] = useState<string[]>([])
-      setLog([...log, `Error: ${error.message}`])
+      console.log(error)
     })
-
-export const addRifToken = () =>
-  addToken({
-    type: 'ERC20',
-    options: {
-      address: '0x2acc95758f8b5f583470ba265eb685a8f45fc9d5',
-      symbol: 'RIF',
-      decimals: 18,
-      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
-    }
-  })
 
 export const addTestnetRifToken = () =>
   addToken({
@@ -81,8 +59,51 @@ export const addTestnetRifToken = () =>
     }
   })
 
+export const addRifToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0x2acc95758f8b5f583470ba265eb685a8f45fc9d5',
+      symbol: 'RIF',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
 export const isMetaMaskInstalled = () => {
   const { ethereum } = window
-  console.log(ethereum && ethereum.isMetaMask && !ethereum.isNiftyWallet)
   return Boolean(ethereum && ethereum.isMetaMask && !ethereum.isNiftyWallet)
+}
+
+export const handleConection = () => {
+  return window.ethereum
+    .request({
+      method: 'eth_requestAccounts'
+    }).then((response: any) => {
+      console.log(response)
+      return response
+    })
+    .catch((err: string) => console.log(err))
+}
+
+export const handleAccounts = () => {
+  window.ethereum
+    .request({
+      method: 'eth_accounts'
+    }).then((response: any) => {
+      console.log(response)
+      return response
+    })
+    .catch((err: string) => console.log(err))
+}
+
+export const handleNet = () => {
+  window.ethereum
+    .request({
+      method: 'eth_chainId'
+    }).then((response: any) => {
+      console.log(response)
+      return response
+    })
+    .catch((err: string) => console.log(err))
 }

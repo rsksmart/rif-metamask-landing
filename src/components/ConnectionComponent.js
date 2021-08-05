@@ -1,13 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-
-class ConnectionComponent extends React.Component {
-  constructor (props) {
-    super(props)
-    props = { step: Number }
-  }
-
+class ConnectionComponent extends Component {
   render () {
+    console.log(this.props.onChildComponentClick)
+
     return (
       <Container className="marginNextStep">
         <Row>
@@ -16,7 +12,7 @@ class ConnectionComponent extends React.Component {
           </Col>
           <Col md={{ span: 8, offset: 12 }}>
             <h2 className="step" >Connect your Metamask wallet. </h2>
-            <button className="button" disabled={(this.props.step !== 1)} onClick={this.props.onChildComponentClick} >Connect Wallet</button>
+            <button className="button" onClick={this.props.onChildComponentClick} >Connect Wallet</button>
           </Col>
         </Row>
       </Container>
