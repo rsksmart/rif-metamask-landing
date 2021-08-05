@@ -5,7 +5,7 @@ import {
 import bitcoinHandImage from '../img/bitcoinHand.png'
 import FooterComponent from './FooterComponent'
 import HeaderComponent from './HeaderComponent'
-import { handleConection } from '../commons/metamask'
+import { handleConection, getAccounts, getChainId } from '../commons/metamask'
 import DownloadComponent from './DownloadComponent'
 import ConnectionComponent from './ConnectionComponent'
 import NetworkComponent from './NetworkComponent'
@@ -16,37 +16,34 @@ class MainComponent extends Component {
     super(props)
     // Steps: 0,1,2,3
     this.state = { step: 0, net: null, address: null }
+
     this.toConnection = this.toConnection.bind(this)
     this.toNetwork = this.toNetwork.bind(this)
     this.toTokens = this.toTokens.bind(this)
   }
 
-  async toConnection () {
-    const aux = await handleConection()
-    console.log(aux)
-    this.setState({
-      step: 1, net: '', address: aux[0]
-    })
-  }
-
   async toNetwork () {
-    this.setState({
-      step: 2, net: '', address: await handleConection()
-    })
+    const accounts = await getAccounts()
+    const net = await getChainId()
+    this.setState({ step: 1, address: accounts[0], net })
   }
 
-  toTokens () {
+  async toTokens () {
+    await addRskTestnet()
+    const net = await getChainId()
+    this.setState({ step: 2, net })
+  }
+
+  addTokens () {
     this.setState({
       step: 3
     })
   }
 
   render () {
-    return (
+    return <>
+      <HeaderComponent address={this.state.address}/>
       <Container>
-        <Row>
-          <HeaderComponent address={this.state.address}/>
-        </Row>
         <Row>
           <Col md={7}>
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;family=Quicksand:wght@300;400;500;600;700&amp" rel="stylesheet"></link><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&display=swap" rel="stylesheet" />
@@ -58,7 +55,7 @@ class MainComponent extends Component {
 
             <DownloadComponent step={this.state.step} />
             <ConnectionComponent step={this.state.step} onChildComponentClick={this.toNetwork} />
-            <NetworkComponent step={this.state.step} onChildComponentClick={this.toTokens.bind(this)} />
+            <NetworkComponent step={this.state.step} net={this.state.net} onChildComponentClick={this.toTokens} />
             <TokensComponent step={this.state.step} />
           </Col>
           <Col>
@@ -67,7 +64,7 @@ class MainComponent extends Component {
         </Row>
         <FooterComponent />
       </Container>
-    )
+    </>
   }
 }
 

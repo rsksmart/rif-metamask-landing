@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 class ConnectionComponent extends Component {
   render () {
-    console.log(this.props.onChildComponentClick)
-
     return (
       <Container className="marginNextStep">
         <Row>
