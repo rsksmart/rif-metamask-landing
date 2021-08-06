@@ -13,13 +13,16 @@ class HeaderComponent extends React.Component {
         <Container>
           <Image className="rskLogo" src={rskLogo} />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="justify-content-right">
-              <NavItem>
+          <Navbar.Text id="basic-navbar-nav" className="justify-content-right">
+            <Nav >
+              <NavItem className="headerAdress">
                 {this.props.address}
+              </NavItem >
+              <NavItem className="headerNet">
+                {this.props.net}
               </NavItem>
             </Nav>
-          </Navbar.Collapse>
+          </Navbar.Text>
         </Container>
       </Navbar>
     )

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { addTestnetRifToken } from '../commons/metamask'
+import { addTestnetRifToken, addTestnetBProToken, addTestnetDocToken } from '../commons/metamask'
 class TokensComponent extends Component {
   props = { step: Number }
 
@@ -18,10 +18,10 @@ class TokensComponent extends Component {
                 <button className="buttonAddToken" onClick={addTestnetRifToken} >Add RIF Token</button>
               </Col>
               <Col>
-                <button className="buttonAddToken" >Add DOC Token</button>
+                <button className="buttonAddToken" onClick={addTestnetDocToken}>Add DOC Token</button>
               </Col>
               <Col>
-                <button className="buttonAddToken" >Add BPRO Token</button>
+                <button className="buttonAddToken" onClick={addTestnetBProToken}>Add BPRO Token</button>
               </Col>
             </Row>
           </Col>

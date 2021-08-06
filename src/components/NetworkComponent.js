@@ -14,7 +14,7 @@ class NetworkComponent extends Component {
           </Col>
           <Col md={{ span: 8, offset: 12 }}>
             <h2 className="step" >Click here to add the Mainnet or Testnet, or change to that network if you already have them configured.</h2>
-            <button className="button" onClick={handleNet} disabled={net === 31}>Connect to RSK</button>
+            <button className="button" onClick={handleNet} disabled={this.props.net === 31}>Connect to RSK</button>
           </Col>
         </Row>
       </Container>

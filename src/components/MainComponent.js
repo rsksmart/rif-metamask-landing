@@ -5,7 +5,7 @@ import {
 import bitcoinHandImage from '../img/bitcoinHand.png'
 import FooterComponent from './FooterComponent'
 import HeaderComponent from './HeaderComponent'
-import { handleConection, getAccounts, getChainId } from '../commons/metamask'
+import { addRskTestnet, getAccounts, getNet } from '../commons/metamask'
 import DownloadComponent from './DownloadComponent'
 import ConnectionComponent from './ConnectionComponent'
 import NetworkComponent from './NetworkComponent'
@@ -17,20 +17,19 @@ class MainComponent extends Component {
     // Steps: 0,1,2,3
     this.state = { step: 0, net: null, address: null }
 
-    this.toConnection = this.toConnection.bind(this)
     this.toNetwork = this.toNetwork.bind(this)
     this.toTokens = this.toTokens.bind(this)
   }
 
   async toNetwork () {
     const accounts = await getAccounts()
-    const net = await getChainId()
+    const net = await getNet()
     this.setState({ step: 1, address: accounts[0], net })
   }
 
   async toTokens () {
     await addRskTestnet()
-    const net = await getChainId()
+    const net = await getNet()
     this.setState({ step: 2, net })
   }
 
@@ -42,7 +41,7 @@ class MainComponent extends Component {
 
   render () {
     return <>
-      <HeaderComponent address={this.state.address}/>
+      <HeaderComponent address={this.state.address} net={this.state.net}/>
       <Container>
         <Row>
           <Col md={7}>

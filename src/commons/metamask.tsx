@@ -70,6 +70,28 @@ export const addRifToken = () =>
     }
   })
 
+export const addTestnetDocToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0xc3de9f38581f83e281f260d0ddbaac0e102ff9f8',
+      symbol: 'tDOC',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
+export const addTestnetBProToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0x53Aa76959004Ba80beA1aeAc847dC930840Da418',
+      symbol: 'tBPRO',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
 export const isMetaMaskInstalled = () => {
   const { ethereum } = window
   return Boolean(ethereum && ethereum.isMetaMask && !ethereum.isNiftyWallet)
@@ -78,9 +100,22 @@ export const isMetaMaskInstalled = () => {
 export const getAccounts = () => window.ethereum.request({ method: 'eth_requestAccounts' })
 export const getChainId = () => window.ethereum.request({ method: 'eth_chainId' })
 
+export const getNet = async () => {
+  const net = await getChainId()
+
+  // TODO extract this!
+  if (net === '0x1f') {
+    return 'Testnet'
+  } else if (net === '0x1e') {
+    return 'Mainnet'
+  }
+
+  return net
+}
+
 export const handleConection = () => Promise.all([
   window.ethereum.request({ method: 'eth_requestAccounts' }).then((accounts: string[]) => accounts[0]),
-  window.ethereum.request({ method: 'eth_chainId' }),
+  window.ethereum.request({ method: 'eth_chainId' })
 ])
 
 export const handleAccounts = () => {

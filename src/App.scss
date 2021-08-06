@@ -46,6 +46,30 @@ $white-color: #ffffff;
     padding: 10%;
   }
 
+  .headerAdress {
+    text-align: center;
+    color: #008FF7;
+    
+    border: 1px solid #008FF7;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    padding: 1% 5% 1% 5% ;
+    margin: auto;
+  }
+
+  .headerNet {
+    text-align: center;
+    font-weight: normal;
+    vertical-align: middle;
+    text-decoration-color: #FFFFFF;
+    color: #FFFFFF;
+    
+    border: 1px solid #FFFFFF;
+    border-radius: 30px;
+    background-color: #008FF7;
+    padding: 1% 5% 1% 5% ;
+  }
+
   .button {
     text-align: center;
     color: #008FF7;
