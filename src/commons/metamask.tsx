@@ -101,16 +101,14 @@ export const getAccounts = () => window.ethereum.request({ method: 'eth_requestA
 export const getChainId = () => window.ethereum.request({ method: 'eth_chainId' })
 
 export const getNet = async () => {
-  const net = await getChainId()
+  let net = await getChainId()
+  net = parseInt(net).toString()
 
-  // TODO extract this!
-  if (net === '0x1f') {
-    return 'Testnet'
-  } else if (net === '0x1e') {
-    return 'Mainnet'
+  switch (net) {
+    case '30': return 'MainNet'
+    case '31': return 'TestNet'
+    default: return 'Invalid net'
   }
-
-  return net
 }
 
 export const handleConection = () => Promise.all([
