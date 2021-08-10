@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { handleNet } from '../commons/metamask'
 
 class NetworkComponent extends Component {
   props = { step: Number }

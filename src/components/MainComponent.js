@@ -5,7 +5,7 @@ import {
 import bitcoinHandImage from '../img/bitcoinHand.png'
 import FooterComponent from './FooterComponent'
 import HeaderComponent from './HeaderComponent'
-import { addRskTestnet, getAccounts, getNet } from '../commons/metamask'
+import { addRskTestnet, addRskMainnet, getAccounts, getNet } from '../commons/metamask'
 import DownloadComponent from './DownloadComponent'
 import ConnectionComponent from './ConnectionComponent'
 import NetworkComponent from './NetworkComponent'
@@ -27,8 +27,11 @@ class MainComponent extends Component {
   }
 
   async toTokens () {
-    // TODO Conect to net from conf
-    await addRskTestnet()
+    switch (process.env.REACT_APP_ENVIRONMENT_ID) {
+      case '30': await addRskMainnet(); break
+      case '31': await addRskTestnet(); break
+    }
+
     const net = await getNet()
     this.setState({ step: 2, net })
   }
