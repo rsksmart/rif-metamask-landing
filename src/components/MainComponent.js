@@ -64,8 +64,8 @@ class MainComponent extends Component {
             <Image className="mainImage" src={bitcoinHandImage} />
           </Col>
         </Row>
-        <FooterComponent />
       </Container>
+      <FooterComponent />
     </>
   }
 }
