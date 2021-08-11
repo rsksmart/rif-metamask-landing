@@ -52,7 +52,7 @@ export const addTestnetRifToken = () =>
   addToken({
     type: 'ERC20',
     options: {
-      address: '0x19f64674d8a5b4e652319f5e239efd3bc969a1fe',
+      address: '0x19f64674D8a5b4e652319F5e239EFd3bc969a1FE',
       symbol: 'tRIF',
       decimals: 18,
       image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
@@ -74,7 +74,7 @@ export const addTestnetDocToken = () =>
   addToken({
     type: 'ERC20',
     options: {
-      address: '0xc3de9f38581f83e281f260d0ddbaac0e102ff9f8',
+      address: '0xCb46C0DdC60d18eFEB0e586c17AF6Ea36452DaE0',
       symbol: 'tDOC',
       decimals: 18,
       image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
@@ -85,8 +85,63 @@ export const addTestnetBProToken = () =>
   addToken({
     type: 'ERC20',
     options: {
-      address: '0x53Aa76959004Ba80beA1aeAc847dC930840Da418',
+      address: '0x4dA7997A819bb46B6758b9102234c289Dd2ad3bf',
       symbol: 'tBPRO',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
+export const addTestnetRDOCToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0xC3De9f38581F83e281F260D0ddBAac0E102Ff9F8',
+      symbol: 'tRDOC',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
+export const addTestnetRIFPToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0x23A1Aa7B11E68beBE560a36bEC04D1F79357f28d',
+      symbol: 'tRIFP  ',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
+export const addTestnetrDAIToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0x7b846216a194C69BB1EA52Ea8FAA92D314866451',
+      symbol: 'rKovDAI',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
+export const addTestnetrUSDCToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0xED3334adB07a3a5947D268e5A8c67B84F5464963',
+      symbol: 'rKovUSDC',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
+export const addTestnetrLINKToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0x8BBbd80981FE76D44854d8dF305e8985c19F0E78',
+      symbol: 'rKovLINK',
       decimals: 18,
       image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
     }
