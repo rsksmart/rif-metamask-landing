@@ -5,7 +5,7 @@ import {
 import bitcoinHandImage from '../img/bitcoinHand.png'
 import FooterComponent from './FooterComponent'
 import HeaderComponent from './HeaderComponent'
-import { addRskTestnet, addRskMainnet, getAccounts, getNet } from '../commons/metamask'
+import { addRskTestnet, addRskMainnet, getAccounts, getNet, addTestnetRifToken, addTestnetDocToken, addTestnetBProToken } from '../commons/metamask'
 import DownloadComponent from './DownloadComponent'
 import ConnectionComponent from './ConnectionComponent'
 import NetworkComponent from './NetworkComponent'
@@ -42,7 +42,19 @@ class MainComponent extends Component {
     })
   }
 
+  addDefaultTokensByQueryParams () {
+    const addressParam = window.location.search.startsWith('?0x') ? window.location.search.replace('?', '') : ''
+
+    switch (addressParam) {
+      case '0x19f64674D8a5b4e652319F5e239EFd3bc969a1FE': addTestnetRifToken(); break
+      case '0xCb46C0DdC60d18eFEB0e586c17AF6Ea36452DaE0': addTestnetDocToken(); break
+      case '0x4dA7997A819bb46B6758b9102234c289Dd2ad3bf': addTestnetBProToken(); break
+    }
+  }
+
   render () {
+    this.addDefaultTokensByQueryParams()
+
     return <>
       <HeaderComponent address={this.state.address} net={this.state.net}/>
       <Container>
