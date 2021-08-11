@@ -43,9 +43,10 @@ class MainComponent extends Component {
   }
 
   addDefaultTokensByQueryParams () {
-    const addressParam = window.location.search.startsWith('?0x') ? window.location.search.replace('?', '') : ''
+    const queryParams = new URLSearchParams(window.location.search)
+    const address = queryParams.get('address')
 
-    switch (addressParam) {
+    switch (address) {
       case '0x19f64674D8a5b4e652319F5e239EFd3bc969a1FE': addTestnetRifToken(); break
       case '0xCb46C0DdC60d18eFEB0e586c17AF6Ea36452DaE0': addTestnetDocToken(); break
       case '0x4dA7997A819bb46B6758b9102234c289Dd2ad3bf': addTestnetBProToken(); break
