@@ -28,7 +28,6 @@ $white-color: #ffffff;
 
   .rskLogo {
     height: 75px;
-    margin-bottom: 3%;
   }
 
   .marginNextStep {
@@ -47,27 +46,25 @@ $white-color: #ffffff;
   }
 
   .headerAdress {
-    text-align: center;
+    text-align: right;
     color: #008FF7;
     
     border: 1px solid #008FF7;
     border-radius: 30px;
     background-color: #FFFFFF;
-    padding: 1% 5% 1% 5% ;
-    margin: auto;
+    padding: 1% 2% 1% 2% ;
   }
 
   .headerNet {
-    text-align: center;
+    text-align: right;
     font-weight: normal;
-    vertical-align: middle;
     text-decoration-color: #FFFFFF;
     color: #FFFFFF;
     
     border: 1px solid #FFFFFF;
     border-radius: 30px;
     background-color: #008FF7;
-    padding: 1% 5% 1% 5% ;
+    padding: 1% 2% 1% 2% ;
   }
 
   .button {
@@ -210,7 +207,7 @@ $white-color: #ffffff;
   font-weight: 300;
   position: relative;
   z-index: 1000;
-  margin-top: 3rem;
+  margin-top: 15rem;
 }
 
 .powered_by {
