@@ -160,8 +160,8 @@ export const getNet = async () => {
   net = parseInt(net).toString()
 
   switch (net) {
-    case '30': return 'MainNet'
-    case '31': return 'TestNet'
+    case '30': return 'RSK MainNet'
+    case '31': return 'RSK TestNet'
     default: return 'Invalid net'
   }
 }

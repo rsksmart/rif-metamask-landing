@@ -27,12 +27,13 @@ class HeaderComponent extends React.Component {
             </Nav>
 
             {this.props.address && (
-              <NavItem className="headerAdress">
-                {this.props.address}
-              </NavItem>)}
-            {this.props.address && (
               <NavItem className="headerNet">
                 {this.props.net}
+              </NavItem>)}
+
+            {this.props.address && (
+              <NavItem className="headerAdress">
+                {this.props.address}
               </NavItem>)}
 
           </Navbar.Collapse>

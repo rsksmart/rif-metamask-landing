@@ -23,7 +23,7 @@ class MainComponent extends Component {
 
   async toNetwork () {
     const accounts = await getAccounts()
-    this.setState({ step: 1, address: accounts[0], net: 'Connect RSK!' })
+    this.setState({ step: 1, address: accounts[0], net: 'Connect to RSK!' })
   }
 
   async toTokens () {
