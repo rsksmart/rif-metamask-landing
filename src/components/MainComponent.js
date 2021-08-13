@@ -73,8 +73,11 @@ class MainComponent extends Component {
             <NetworkComponent step={this.state.step} net={this.state.net} onChildComponentClick={this.toTokens} />
             <TokensComponent step={this.state.step} />
           </Col>
-          <Col>
+          <Col md={{ span: 3, offset: 12 }}>
             <Image className="mainImage" src={bitcoinHandImage} />
+          </Col>
+          <Col md={{ span: 2, offset: 12 }}>
+            <div id="mainImageCircle"/>
           </Col>
         </Row>
       </Container>

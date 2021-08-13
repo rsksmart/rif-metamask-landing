@@ -20,9 +20,10 @@ class HeaderComponent extends React.Component {
               navbarScroll
             >
               <NavDropdown title="About" id="navbarScrollingDropdown" className="headerDropdown">
-                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.iovlabs.org/">About IOVLabs</NavDropdown.Item>
-                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.rsk.co/">RSK</NavDropdown.Item>
-                <NavDropdown.Item target="_blank" rel="noreferrer" href="http://www.rifos.org/assets/whitepapers/rif-whitepaper-en.pdf">Whitepaper</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.iovlabs.org/">How to list your tokens</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.iovlabs.org/">How to customize with your tokens</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.iovlabs.org/">Read more</NavDropdown.Item>
+                <NavDropdown.Item target="_blank" rel="noreferrer" href="https://www.iovlabs.org/">Github repo</NavDropdown.Item>
               </NavDropdown>
             </Nav>
 
