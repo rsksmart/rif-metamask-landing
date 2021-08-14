@@ -79,30 +79,44 @@ $white-color: #ffffff;
     }
   }
 
+  .centerDivButtons { text-align: center; }
+
   .button {
-    text-align: center;
     color: #008FF7;
+    text-align: center;
     
     border: 1px solid #008FF7;
     border-radius: 30px;
     background-color: #FFFFFF;
-    padding: 1% 10% 1% 10% ;
-    margin: 1% 0% 0% 20%;
+    padding: 1% 10% 1% 10%;
+
     opacity: 0.9;
     transition: 0.3s;
     text-decoration: none;
   }
 
   button:disabled,
-  button[disabled]{
+  button[disabled] {
     text-align: center;
     color: grey;
+    padding: 1% 10% 1% 10%;
     
     border: 1px solid grey;
     border-radius: 30px;
     background-color: #FFFFFF;
-    padding: 1% 10% 1% 10% ;
-    margin: 2% 0% 0% 10%;
+    opacity: 0.9;
+    transition: 0.3s;
+  }
+
+  button:disabled:hover,
+  button[disabled]:hover{
+    text-align: center;
+    color: grey;
+    padding: 1% 10% 1% 10%;
+    
+    border: 1px solid grey;
+    border-radius: 30px;
+    background-color: #FFFFFF;
     opacity: 0.9;
     transition: 0.3s;
   }

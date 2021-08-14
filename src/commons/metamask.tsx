@@ -152,7 +152,22 @@ export const isMetaMaskInstalled = () => {
   return Boolean(ethereum && ethereum.isMetaMask && !ethereum.isNiftyWallet)
 }
 
-export const getAccounts = () => window.ethereum.request({ method: 'eth_requestAccounts' })
+export const isMetaMaskConnected = () => {
+  const { ethereum } = window
+  if ((ethereum) && (ethereum.isConnected())) {
+    return Boolean(true)
+  }
+  return Boolean(false)
+}
+
+export const isButtonTokenAvailable = () => {
+  return getAccounts() && getNet()
+}
+
+export const getAccounts = () => {
+  return window.ethereum.request({ method: 'eth_requestAccounts' })
+}
+
 export const getChainId = () => window.ethereum.request({ method: 'eth_chainId' })
 
 export const getNet = async () => {
@@ -176,7 +191,6 @@ export const handleAccounts = () => {
     .request({
       method: 'eth_accounts'
     }).then((response: any) => {
-      console.log(response)
       return response
     })
     .catch((err: string) => console.log(err))
@@ -187,7 +201,6 @@ export const handleNet = () => {
     .request({
       method: 'eth_chainId'
     }).then((response: any) => {
-      console.log(response)
       return response
     })
     .catch((err: string) => console.log(err))
