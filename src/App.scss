@@ -23,12 +23,12 @@ $white-color: #ffffff;
     line-height: 62px;
     /* identical to box height */
     
-    color: #008FF7;    
+    color: #008FF7;
+    margin-top: 10%;    
   }
 
   .rskLogo {
     height: 75px;
-    margin-bottom: 3%;
   }
 
   .marginNextStep {
@@ -47,27 +47,36 @@ $white-color: #ffffff;
   }
 
   .headerAdress {
-    text-align: center;
+    text-align: right;
     color: #008FF7;
     
     border: 1px solid #008FF7;
     border-radius: 30px;
     background-color: #FFFFFF;
-    padding: 1% 5% 1% 5% ;
-    margin: auto;
+    padding: 1% 2% 1% 2%;
   }
 
   .headerNet {
-    text-align: center;
+    text-align: right;
     font-weight: normal;
-    vertical-align: middle;
     text-decoration-color: #FFFFFF;
     color: #FFFFFF;
     
     border: 1px solid #FFFFFF;
     border-radius: 30px;
     background-color: #008FF7;
-    padding: 1% 5% 1% 5% ;
+    padding: 1% 2% 1% 2%;
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+
+  .headerDropdown {
+    margin-right: 10%;
+    color: #008FF7 !important;
+    
+    .dropdown-menu {
+      right: 0 !important;
+    }
   }
 
   .button {
@@ -165,17 +174,20 @@ $white-color: #ffffff;
     text-align: center;
   }
   
-
   .mainImage {
     border-radius: 50%;
-
+    margin-left: 25%;
+    margin-top: 25%;
     background: url('./img/bitcoinHand.png');
+    position: relative;
   }
-
-  .mainImageCircle {
+  
+  #mainImageCircle {
     border-radius: 50%;
-    
+    margin-top: 40%;
     background: #188FFC;
+    width: 100px;
+    height: 100px;
   }
 
   .toolExplanation {
@@ -186,7 +198,7 @@ $white-color: #ffffff;
     line-height: 19px;
 
     color: #000000;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
   }
 
   .step {
@@ -210,7 +222,7 @@ $white-color: #ffffff;
   font-weight: 300;
   position: relative;
   z-index: 1000;
-  margin-top: 3rem;
+  margin-top: 15rem;
 }
 
 .powered_by {
