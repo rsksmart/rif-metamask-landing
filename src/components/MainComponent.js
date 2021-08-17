@@ -28,6 +28,7 @@ class MainComponent extends Component {
     switch (process.env.REACT_APP_ENVIRONMENT_ID) {
       case '30': await addRskMainnet(); break
       case '31': await addRskTestnet(); break
+      case '8545': await addRskTestnet(); break
     }
 
     const net = await getNet()
@@ -68,7 +69,7 @@ class MainComponent extends Component {
             <DownloadComponent step={this.state.step} />
             <ConnectionComponent step={this.state.step} onChildComponentClick={this.toNetwork} />
             <NetworkComponent step={this.state.step} net={this.state.net} onChildComponentClick={this.toTokens} />
-            <TokensComponent step={this.state.step} />
+            <TokensComponent step={this.state.step} net={this.state.net} />
           </Col>
           <Col md={{ span: 3, offset: 12 }}>
             <Image className="mainImage" src={bitcoinHandImage} />

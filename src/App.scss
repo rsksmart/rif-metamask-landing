@@ -43,11 +43,11 @@ $white-color: #ffffff;
     border: 1px solid #008FF7;
     box-sizing: border-box;
     border-radius: 3px;
-    padding: 10%;
+    padding: 5px;
   }
 
   .headerAdress {
-    text-align: right;
+    text-align: center;
     color: #008FF7;
     
     border: 1px solid #008FF7;
@@ -57,7 +57,7 @@ $white-color: #ffffff;
   }
 
   .headerNet {
-    text-align: right;
+    text-align: center;
     font-weight: normal;
     text-decoration-color: #FFFFFF;
     color: #FFFFFF;
@@ -72,7 +72,6 @@ $white-color: #ffffff;
 
   .headerDropdown {
     margin-right: 10%;
-    color: #008FF7 !important;
     
     .dropdown-menu {
       right: 0 !important;

@@ -13,7 +13,7 @@ const DownloadComponent = () =>
           <div className="centerDivButtons">
             <h2 className="step" >Download and setup Metamask. </h2>
             <Col md={{ span: 8, offset: 2 }}>
-              <button href="https://metamask.io/download.html" target="_blank" rel="noreferrer" className="button" disabled={isMetaMaskInstalled()} >Download Metamask</button>
+              <button onClick={ () => { window.open('https://metamask.io/download.html') } } target="_blank" rel="noreferrer" className="button" disabled={isMetaMaskInstalled()} >Download Metamask</button>
             </Col>
           </div>
         </Row>
