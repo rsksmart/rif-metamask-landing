@@ -14,9 +14,7 @@ import TokensComponent from './TokensComponent'
 class MainComponent extends Component {
   constructor (props) {
     super(props)
-    // Steps: 0,1,2,3
     this.state = { step: 0, net: null, address: null }
-
     this.toNetwork = this.toNetwork.bind(this)
     this.toTokens = this.toTokens.bind(this)
   }
@@ -30,6 +28,7 @@ class MainComponent extends Component {
     switch (process.env.REACT_APP_ENVIRONMENT_ID) {
       case '30': await addRskMainnet(); break
       case '31': await addRskTestnet(); break
+      case '8545': await addRskTestnet(); break
     }
 
     const net = await getNet()
@@ -61,7 +60,6 @@ class MainComponent extends Component {
       <Container>
         <Row>
           <Col md={7}>
-            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;family=Quicksand:wght@300;400;500;600;700&amp" rel="stylesheet"></link><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&display=swap" rel="stylesheet" />
             <header className="App-header">
                 Connect Metamask to RSK
             </header>
@@ -71,7 +69,7 @@ class MainComponent extends Component {
             <DownloadComponent step={this.state.step} />
             <ConnectionComponent step={this.state.step} onChildComponentClick={this.toNetwork} />
             <NetworkComponent step={this.state.step} net={this.state.net} onChildComponentClick={this.toTokens} />
-            <TokensComponent step={this.state.step} />
+            <TokensComponent step={this.state.step} net={this.state.net} />
           </Col>
           <Col md={{ span: 3, offset: 12 }}>
             <Image className="mainImage" src={bitcoinHandImage} />

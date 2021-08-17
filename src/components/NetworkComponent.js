@@ -1,24 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 
-class NetworkComponent extends Component {
-  props = { step: Number }
-
-  render () {
-    return (
-      <Container className="marginNextStep">
+const NetworkComponent = ({ step, onChildComponentClick }) =>
+  <Container className="marginNextStep">
+    <Row>
+      <Col md={{ span: 1, offset: 1 }} >
+        <span className="bullet">3</span>
+      </Col>
+      <Col md={{ span: 8, offset: 12 }}>
         <Row>
-          <Col md={{ span: 1, offset: 1 }} >
-            <span className="bullet">3</span>
-          </Col>
-          <Col md={{ span: 8, offset: 12 }}>
+          <div className="centerDivButtons">
             <h2 className="step" >Click here to add the Mainnet or Testnet, or change to that network if you already have them configured.</h2>
-            <button className="button" onClick={this.props.onChildComponentClick} disabled={this.props.net === 31}>Connect to RSK</button>
-          </Col>
+            <Col md={{ span: 8, offset: 2 }}>
+              <button className="button" onClick={onChildComponentClick} disabled={step !== 1}>Connect to RSK</button>
+            </Col>
+          </div>
         </Row>
-      </Container>
-    )
-  }
-}
+      </Col>
+    </Row>
+  </Container>
 
 export default NetworkComponent

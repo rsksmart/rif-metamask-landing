@@ -1,3 +1,5 @@
+import { getMetaMap, TokenMetadata, getURLtoTokenImg } from './metadata'
+
 declare const window: any
 
 export const addNetwork = (params: any) =>
@@ -39,43 +41,12 @@ export const addRskMainnet = () =>
     }
   ])
 
-export const addToken = (params: any) =>
-  window.ethereum.request({ method: 'wallet_watchAsset', params })
-    .then((response: any) => {
-      console.log(response)
-    })
-    .catch((error: Error) => {
-      console.log(error)
-    })
-
 export const addTestnetRifToken = () =>
   addToken({
     type: 'ERC20',
     options: {
       address: '0x19f64674D8a5b4e652319F5e239EFd3bc969a1FE',
       symbol: 'tRIF',
-      decimals: 18,
-      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
-    }
-  })
-
-export const addRifToken = () =>
-  addToken({
-    type: 'ERC20',
-    options: {
-      address: '0x2acc95758f8b5f583470ba265eb685a8f45fc9d5',
-      symbol: 'RIF',
-      decimals: 18,
-      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
-    }
-  })
-
-export const addTestnetDocToken = () =>
-  addToken({
-    type: 'ERC20',
-    options: {
-      address: '0xCb46C0DdC60d18eFEB0e586c17AF6Ea36452DaE0',
-      symbol: 'tDOC',
       decimals: 18,
       image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
     }
@@ -92,67 +63,64 @@ export const addTestnetBProToken = () =>
     }
   })
 
-export const addTestnetRDOCToken = () =>
+export const addTestnetDocToken = () =>
   addToken({
     type: 'ERC20',
     options: {
-      address: '0xC3De9f38581F83e281F260D0ddBAac0E102Ff9F8',
-      symbol: 'tRDOC',
+      address: '0xCb46C0DdC60d18eFEB0e586c17AF6Ea36452DaE0',
+      symbol: 'tDOC',
       decimals: 18,
       image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
     }
   })
 
-export const addTestnetRIFPToken = () =>
-  addToken({
-    type: 'ERC20',
-    options: {
-      address: '0x23A1Aa7B11E68beBE560a36bEC04D1F79357f28d',
-      symbol: 'tRIFP  ',
-      decimals: 18,
-      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
-    }
-  })
+export const addToken = (params: any) =>
+  window.ethereum.request({ method: 'wallet_watchAsset', params })
+    .then((response: any) => {
+      console.log(response)
+    })
+    .catch((error: Error) => {
+      console.log(error)
+    })
 
-export const addTestnetrDAIToken = () =>
-  addToken({
-    type: 'ERC20',
-    options: {
-      address: '0x7b846216a194C69BB1EA52Ea8FAA92D314866451',
-      symbol: 'rKovDAI',
-      decimals: 18,
-      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
-    }
-  })
+export const addTokens = (net: string, token: string) => {
+  const metaMap = getMetaMap(net, token) as TokenMetadata
+  if (metaMap !== undefined) {
+    const img = getURLtoTokenImg(net) + metaMap.logo
 
-export const addTestnetrUSDCToken = () =>
-  addToken({
-    type: 'ERC20',
-    options: {
-      address: '0xED3334adB07a3a5947D268e5A8c67B84F5464963',
-      symbol: 'rKovUSDC',
-      decimals: 18,
-      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
-    }
-  })
-
-export const addTestnetrLINKToken = () =>
-  addToken({
-    type: 'ERC20',
-    options: {
-      address: '0x8BBbd80981FE76D44854d8dF305e8985c19F0E78',
-      symbol: 'rKovLINK',
-      decimals: 18,
-      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
-    }
-  })
+    addToken({
+      type: 'ERC20',
+      options: {
+        address: metaMap.address,
+        symbol: metaMap.symbol,
+        decimals: metaMap.decimals,
+        image: img
+      }
+    })
+  }
+}
 
 export const isMetaMaskInstalled = () => {
   const { ethereum } = window
   return Boolean(ethereum && ethereum.isMetaMask && !ethereum.isNiftyWallet)
 }
 
-export const getAccounts = () => window.ethereum.request({ method: 'eth_requestAccounts' })
+export const isMetaMaskConnected = () => {
+  const { ethereum } = window
+  if ((ethereum) && (ethereum.isConnected())) {
+    return Boolean(true)
+  }
+  return Boolean(false)
+}
+
+export const isButtonTokenAvailable = () => {
+  return getAccounts() && getNet()
+}
+
+export const getAccounts = () => {
+  return window.ethereum.request({ method: 'eth_requestAccounts' })
+}
+
 export const getChainId = () => window.ethereum.request({ method: 'eth_chainId' })
 
 export const getNet = async () => {
@@ -176,7 +144,6 @@ export const handleAccounts = () => {
     .request({
       method: 'eth_accounts'
     }).then((response: any) => {
-      console.log(response)
       return response
     })
     .catch((err: string) => console.log(err))
@@ -187,7 +154,6 @@ export const handleNet = () => {
     .request({
       method: 'eth_chainId'
     }).then((response: any) => {
-      console.log(response)
       return response
     })
     .catch((err: string) => console.log(err))
