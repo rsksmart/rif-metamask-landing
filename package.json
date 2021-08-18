@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start:testnet": "env-cmd -f .env.testnet react-scripts start",
+    "start:mainnet": "env-cmd -f .env.production react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --verbose --watchAll=false",
