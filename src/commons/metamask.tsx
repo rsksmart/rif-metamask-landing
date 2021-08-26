@@ -51,6 +51,17 @@ export const addRskMainnet = () =>
     }
   ])
 
+export const addRifToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0x2acc95758f8b5f583470ba265eb685a8f45fc9d5',
+      symbol: 'RIF',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
 export const addTestnetRifToken = () =>
   addToken({
     type: 'ERC20',
