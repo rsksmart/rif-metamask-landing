@@ -83,29 +83,29 @@ class TokensComponent extends Component {
             <h2 className="step" >Add the RSK tokens! Click below to add the Mainnet RSK compatible tokens. </h2>
             <Row>
               <Col>
-                <button className="buttonAddToken" onClick={this.addRIFToken} disabled={this.props.step !== 2} >Add RIF Token</button>
-                <button className="buttonAddToken" onClick={this.addRDOCToken} hidden={!this.state.display} disabled={this.props.step !== 2} >Add RDOC Token</button>
-                <button className="buttonAddToken" onClick={this.addrUSDCToken} hidden={!this.state.display} disabled={this.props.step !== 2} >Add rUSDC Token</button>
+                <button className="buttonAddToken" onClick={this.addRIFToken} disabled={this.props.disabled} >Add RIF Token</button>
+                <button className="buttonAddToken" onClick={this.addRDOCToken} hidden={!this.state.display} disabled={this.props.disabled} >Add RDOC Token</button>
+                <button className="buttonAddToken" onClick={this.addrUSDCToken} hidden={!this.state.display} disabled={this.props.disabled} >Add rUSDC Token</button>
               </Col>
               <Col>
                 <Row>
                   <Col>
-                    <button className="buttonAddToken" onClick={this.addDOCToken} disabled={this.props.step !== 2} >Add DOC Token</button>
-                    <button className="buttonAddToken" onClick={this.addRIFPToken} hidden={!this.state.display} disabled={this.props.step !== 2} >Add RIFP Token</button>
-                    <button className="buttonAddToken" onClick={this.addrDAIToken} hidden={!this.state.display} disabled={this.props.step !== 2} >Add rDAI Token</button>
+                    <button className="buttonAddToken" onClick={this.addDOCToken} disabled={this.props.disabled} >Add DOC Token</button>
+                    <button className="buttonAddToken" onClick={this.addRIFPToken} hidden={!this.state.display} disabled={this.props.disabled} >Add RIFP Token</button>
+                    <button className="buttonAddToken" onClick={this.addrDAIToken} hidden={!this.state.display} disabled={this.props.disabled} >Add rDAI Token</button>
                   </Col>
                 </Row>
                 <Row className="buttonAddMoreTokens">
                   <Col>
-                    <button className="buttonAddToken" hidden={this.state.display} onClick={this.handleAddButtonClick} disabled={this.props.step !== 2} >+</button>
-                    <button className="buttonAddToken" hidden={!this.state.display} onClick={this.handleRemoveButtonClick} disabled={this.props.step !== 2} >-</button>
+                    <button className="buttonAddToken" hidden={this.state.display} onClick={this.handleAddButtonClick} disabled={this.props.disabled} >+</button>
+                    <button className="buttonAddToken" hidden={!this.state.display} onClick={this.handleRemoveButtonClick} disabled={this.props.disabled} >-</button>
                   </Col>
                 </Row>
               </Col>
               <Col>
-                <button className="buttonAddToken" onClick={this.addBPROToken} disabled={this.props.step !== 2} >Add BPRO Token</button>
-                <button className="buttonAddToken" onClick={this.addrLinkToken} hidden={!this.state.display} disabled={this.props.step !== 2} >Add rLink Token</button>
-                <button className="buttonAddToken" onClick={this.addSOVToken} hidden={!this.state.display} disabled={this.props.step !== 2 || this.props.net !== '30'} >Add SOV Token</button>
+                <button className="buttonAddToken" onClick={this.addBPROToken} disabled={this.props.disabled} >Add BPRO Token</button>
+                <button className="buttonAddToken" onClick={this.addrLinkToken} hidden={!this.state.display} disabled={this.props.disabled} >Add rLink Token</button>
+                <button className="buttonAddToken" onClick={this.addSOVToken} hidden={!this.state.display} disabled={this.props.disabled || this.props.net !== '30'} >Add SOV Token</button>
               </Col>
             </Row>
           </Col>
