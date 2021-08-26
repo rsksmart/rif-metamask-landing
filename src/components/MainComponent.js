@@ -5,7 +5,7 @@ import {
 import bitcoinHandImage from '../img/bitcoinHand.png'
 import FooterComponent from './FooterComponent'
 import HeaderComponent from './HeaderComponent'
-import { addRskTestnet, addRskMainnet, getAccounts, getNet, addTestnetRifToken, addTestnetDocToken, addTestnetBProToken } from '../commons/metamask'
+import { addRskTestnet, addRskMainnet, getAccounts, getNet, addTestnetRifToken, addTestnetDocToken, addTestnetBProToken, onChainChanged } from '../commons/metamask'
 import DownloadComponent from './DownloadComponent'
 import ConnectionComponent from './ConnectionComponent'
 import NetworkComponent from './NetworkComponent'
@@ -22,6 +22,7 @@ class MainComponent extends Component {
   async toNetwork () {
     const accounts = await getAccounts()
     this.setState({ step: 1, address: accounts[0], net: 'Connect to RSK!' })
+    onChainChanged(this.toNetwork)
   }
 
   async toTokens () {
