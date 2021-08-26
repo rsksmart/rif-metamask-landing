@@ -11,6 +11,16 @@ export const addNetwork = (params: any) =>
       console.log(`Error: ${error.message}`)
     })
 
+export const onChainChanged = (toStep3:() => void) => window.ethereum.on('chainChanged', (selectedChainId:string) => {
+  const envChainId:number = parseInt(process.env.REACT_APP_ENVIRONMENT_ID!)
+  const formattedEnvChainId = '0x' + envChainId?.toString(16)
+
+  if (selectedChainId !== formattedEnvChainId) {
+    toStep3()
+    console.log('Chain switched to: ', selectedChainId)
+  }
+})
+
 export const addRskTestnet = () =>
   addNetwork([
     {
