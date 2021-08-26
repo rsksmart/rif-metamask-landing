@@ -26,7 +26,14 @@ class MainComponent extends Component {
 
   async toNetwork () {
     const accounts = await getAccounts()
-    this.setState({ step: STEP_3, address: accounts[0], net: 'Connect to RSK!' })
+    const net = await getNet()
+    console.log(net)
+    console.log(process.env.REACT_APP_ENVIRONMENT_ID)
+    this.setState({
+      step: net === process.env.REACT_APP_ENVIRONMENT_ID ? STEP_4 : STEP_3,
+      address: accounts[0],
+      net
+    })
     onChainChanged(this.toNetwork)
   }
 

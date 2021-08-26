@@ -115,32 +115,17 @@ export const isMetaMaskInstalled = () => {
   return Boolean(ethereum && ethereum.isMetaMask && !ethereum.isNiftyWallet)
 }
 
-export const isMetaMaskConnected = () => {
-  const { ethereum } = window
-  if ((ethereum) && (ethereum.isConnected())) {
-    return Boolean(true)
-  }
-  return Boolean(false)
-}
-
-export const isButtonTokenAvailable = () => {
-  return getAccounts() && getNet()
-}
-
 export const getAccounts = () => {
   return window.ethereum.request({ method: 'eth_requestAccounts' })
 }
 
-export const getChainId = () => window.ethereum.request({ method: 'eth_chainId' })
+export const getNet = () => window.ethereum.request({ method: 'eth_chainId' }).then(parseInt).then((id: number) => id.toString())
 
-export const getNet = async () => {
-  let net = await getChainId()
-  net = parseInt(net).toString()
-
+export const netLabel = (net: string) => {
   switch (net) {
     case '30': return 'RSK MainNet'
     case '31': return 'RSK TestNet'
-    default: return 'Invalid net'
+    default: return null
   }
 }
 
