@@ -5,19 +5,16 @@ declare const window: any
 export const addNetwork = (params: any) =>
   window.ethereum.request({ method: 'wallet_addEthereumChain', params })
     .then(() => {
-      console.log(`Switched to ${params[0].chainName} (${parseInt(params[0].chainId)})`)
+      console.log('Metamask closed')
     })
-    .catch((error: Error) => {
-      console.log(`Error: ${error.message}`)
-    })
-
-export const onChainChanged = (toStep3:() => void) => window.ethereum.on('chainChanged', (selectedChainId:string) => {
+export const onChainChanged = (toStep3:() => void, toStep4:() => void) => window.ethereum.on('chainChanged', (selectedChainId:string) => {
   const envChainId:number = parseInt(process.env.REACT_APP_ENVIRONMENT_ID!)
   const formattedEnvChainId = '0x' + envChainId?.toString(16)
-
+  console.log({ selectedChainId })
   if (selectedChainId !== formattedEnvChainId) {
     toStep3()
-    console.log('Chain switched to: ', selectedChainId)
+  } else if (selectedChainId === formattedEnvChainId) {
+    toStep4()
   }
 })
 
