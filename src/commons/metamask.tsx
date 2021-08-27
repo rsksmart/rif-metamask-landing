@@ -1,4 +1,4 @@
-import { getMetaMap, TokenMetadata, getURLtoTokenImg } from './metadata'
+import { getURLtoTokenImg, ITokenMetadata } from './metadata'
 
 declare const window: any
 
@@ -104,10 +104,11 @@ export const addToken = (params: any) =>
       console.log(error)
     })
 
-export const addTokens = (net: string, token: string) => {
-  const metaMap = getMetaMap(net, token) as TokenMetadata
-  if (metaMap !== undefined) {
-    const img = getURLtoTokenImg(net) + metaMap.logo
+
+
+export const addCustomTokens = (isMainnet: boolean, metaMap:ITokenMetadata) => {
+  if (metaMap) {
+    const img = getURLtoTokenImg(isMainnet) + metaMap.logo
 
     addToken({
       type: 'ERC20',
