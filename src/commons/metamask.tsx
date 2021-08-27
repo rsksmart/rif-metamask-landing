@@ -10,7 +10,6 @@ export const addNetwork = (params: any) =>
 export const onChainChanged = (toStep3:() => void, toStep4:() => void) => window.ethereum.on('chainChanged', (selectedChainId:string) => {
   const envChainId:number = parseInt(process.env.REACT_APP_ENVIRONMENT_ID!)
   const formattedEnvChainId = '0x' + envChainId?.toString(16)
-  console.log({ selectedChainId })
   if (selectedChainId !== formattedEnvChainId) {
     toStep3()
   } else if (selectedChainId === formattedEnvChainId) {

@@ -26,30 +26,12 @@ class MainComponent extends Component {
 
   async toNetwork () {
     const accounts = await getAccounts()
-<<<<<<< Updated upstream
     const net = await getNet()
-    console.log(net)
-    console.log(process.env.REACT_APP_ENVIRONMENT_ID)
     this.setState({
       step: net === process.env.REACT_APP_ENVIRONMENT_ID ? STEP_4 : STEP_3,
       address: accounts[0],
       net
     })
-=======
-<<<<<<< Updated upstream
-    this.setState({ step: 1, address: accounts[0], net: 'Connect to RSK!' })
->>>>>>> Stashed changes
-    onChainChanged(this.toNetwork)
-=======
-    const net = await getNet()
-    console.log(net)
-    console.log(process.env.REACT_APP_ENVIRONMENT_ID)
-    this.setState({
-      step: net === process.env.REACT_APP_ENVIRONMENT_ID ? STEP_4 : STEP_3,
-      address: accounts[0],
-      net
-    })
->>>>>>> Stashed changes
   }
 
   componentDidMount () {
