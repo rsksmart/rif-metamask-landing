@@ -104,8 +104,6 @@ export const addToken = (params: any) =>
       console.log(error)
     })
 
-
-
 export const addCustomTokens = (isMainnet: boolean, metaMap:ITokenMetadata) => {
   if (metaMap) {
     const img = getURLtoTokenImg(isMainnet) + metaMap.logo
