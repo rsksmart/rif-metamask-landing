@@ -29,9 +29,7 @@ const AddTokenButton = ({ metadataToken, disabled }) => <button
   key={metadataToken.symbol}
   className="buttonAddToken"
   onClick={() => addMetadataToken(metadataToken)}
-  disabled={disabled} >
-    {`Add ${metadataToken.symbol} Token`}
-</button>
+  disabled={disabled} >{`Add ${metadataToken.symbol} Token`}</button>
 
 class TokensComponent extends Component {
   constructor (props) {
