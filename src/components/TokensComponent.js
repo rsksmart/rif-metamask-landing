@@ -11,15 +11,22 @@ const metadataTokens = Object.entries(isMainnet ? contractMapMainnet : contractM
 
 const queryParam = new URLSearchParams(window.location.search).get('tokens')
 const selectedTokens = queryParam ? queryParam.split(',').map(a => a.toLowerCase()) : []
-selectedTokens.push(isMainnet ? '0x2acc95758f8b5f583470ba265eb685a8f45fc9d5' : '0x19f64674d8a5b4e652319f5e239efd3bc969a1fe')
+const defaultQuantityToShow = 5
 
-const metadataTokensToShow = []
-const metadataTokensToHide = []
-
-for (const token of metadataTokens) {
-  if (selectedTokens.includes(token.address.toLowerCase())) metadataTokensToShow.push(token)
-  else metadataTokensToHide.push(token)
+function getMetadataTokensToShow (_metadataTokens) {
+  if (selectedTokens.length > 0) {
+    const metadataTokensToShow = []
+    for (const token of _metadataTokens) {
+      if (selectedTokens.includes(token.address.toLowerCase())) {
+        metadataTokensToShow.push(token)
+      }
+    }
+    return metadataTokensToShow
+  } else {
+    return _metadataTokens.slice(0, defaultQuantityToShow)
+  }
 }
+let metadataTokensToShow = getMetadataTokensToShow(metadataTokens)
 
 function addMetadataToken (metadataToken) {
   addCustomTokens(isMainnet, metadataToken)
@@ -42,12 +49,14 @@ class TokensComponent extends Component {
   }
 
   handleAddButtonClick () {
+    metadataTokensToShow = metadataTokens
     this.setState({
       display: true
     })
   }
 
   handleRemoveButtonClick () {
+    metadataTokensToShow = getMetadataTokensToShow(metadataTokens)
     this.setState({
       display: false
     })
@@ -65,7 +74,6 @@ class TokensComponent extends Component {
             <Row>
               <Col>
                 {metadataTokensToShow.map(metadataToken => <AddTokenButton key={metadataToken.address} metadataToken={metadataToken} disabled={this.props.disabled} />)}
-                {this.state.display && metadataTokensToHide.map(metadataToken => <AddTokenButton key={metadataToken.address} metadataToken={metadataToken} disabled={this.props.disabled} />)}
                 <button key='add' onClick={this.handleAddButtonClick} hidden={this.state.display} className="buttonAddToken" >+</button>
                 <button key='remove' onClick={this.handleRemoveButtonClick} hidden={!this.state.display} className="buttonAddToken" >-</button>
               </Col>
