@@ -1,4 +1,4 @@
-import { getMetaMap, TokenMetadata, getURLtoTokenImg } from './metadata'
+import { getURLtoTokenImg, ITokenMetadata } from './metadata'
 
 declare const window: any
 
@@ -51,6 +51,17 @@ export const addRskMainnet = () =>
     }
   ])
 
+export const addRifToken = () =>
+  addToken({
+    type: 'ERC20',
+    options: {
+      address: '0x2acc95758f8b5f583470ba265eb685a8f45fc9d5',
+      symbol: 'RIF',
+      decimals: 18,
+      image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3701.png'
+    }
+  })
+
 export const addTestnetRifToken = () =>
   addToken({
     type: 'ERC20',
@@ -93,10 +104,9 @@ export const addToken = (params: any) =>
       console.log(error)
     })
 
-export const addTokens = (net: string, token: string) => {
-  const metaMap = getMetaMap(net, token) as TokenMetadata
-  if (metaMap !== undefined) {
-    const img = getURLtoTokenImg(net) + metaMap.logo
+export const addCustomTokens = (isMainnet: boolean, metaMap:ITokenMetadata) => {
+  if (metaMap) {
+    const img = getURLtoTokenImg(isMainnet) + metaMap.logo
 
     addToken({
       type: 'ERC20',
@@ -115,32 +125,17 @@ export const isMetaMaskInstalled = () => {
   return Boolean(ethereum && ethereum.isMetaMask && !ethereum.isNiftyWallet)
 }
 
-export const isMetaMaskConnected = () => {
-  const { ethereum } = window
-  if ((ethereum) && (ethereum.isConnected())) {
-    return Boolean(true)
-  }
-  return Boolean(false)
-}
-
-export const isButtonTokenAvailable = () => {
-  return getAccounts() && getNet()
-}
-
 export const getAccounts = () => {
   return window.ethereum.request({ method: 'eth_requestAccounts' })
 }
 
-export const getChainId = () => window.ethereum.request({ method: 'eth_chainId' })
+export const getNet = () => window.ethereum.request({ method: 'eth_chainId' }).then(parseInt).then((id: number) => id.toString())
 
-export const getNet = async () => {
-  let net = await getChainId()
-  net = parseInt(net).toString()
-
+export const netLabel = (net: string) => {
   switch (net) {
     case '30': return 'RSK MainNet'
     case '31': return 'RSK TestNet'
-    default: return 'Invalid net'
+    default: return null
   }
 }
 

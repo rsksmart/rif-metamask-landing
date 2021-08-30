@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 
-const NetworkComponent = ({ step, onChildComponentClick }) =>
+const NetworkComponent = ({ disabled, onChildComponentClick }) =>
   <Container className="marginNextStep">
     <Row>
       <Col md={{ span: 1, offset: 1 }} >
@@ -12,7 +12,7 @@ const NetworkComponent = ({ step, onChildComponentClick }) =>
           <div className="centerDivButtons">
             <h2 className="step" >Click here to add the Mainnet or Testnet, or change to that network if you already have them configured.</h2>
             <Col md={{ span: 8, offset: 2 }}>
-              <button className="button" onClick={onChildComponentClick} disabled={step !== 1}>Connect to RSK</button>
+              <button className="button" onClick={onChildComponentClick} disabled={disabled}>Connect to RSK</button>
             </Col>
           </div>
         </Row>

@@ -8,23 +8,23 @@ $white-color: #ffffff;
   .App-logo {
     pointer-events: none;
   }
-  
+
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
     }
   }
-  
-  .App-header {    
+
+  .App-header {
     font-family: Quicksand;
     font-style: normal;
     font-weight: bold;
     font-size: 50px;
     line-height: 62px;
     /* identical to box height */
-    
+
     color: #008FF7;
-    margin-top: 10%;    
+    margin-top: 10%;
   }
 
   .rskLogo {
@@ -39,7 +39,7 @@ $white-color: #ffffff;
     font-size: 16px;
     text-align: center;
     color: #008FF7;
-    
+
     border: 1px solid #008FF7;
     box-sizing: border-box;
     border-radius: 3px;
@@ -49,7 +49,7 @@ $white-color: #ffffff;
   .headerAdress {
     text-align: center;
     color: #008FF7;
-    
+
     border: 1px solid #008FF7;
     border-radius: 30px;
     background-color: #FFFFFF;
@@ -61,7 +61,7 @@ $white-color: #ffffff;
     font-weight: normal;
     text-decoration-color: #FFFFFF;
     color: #FFFFFF;
-    
+
     border: 1px solid #FFFFFF;
     border-radius: 30px;
     background-color: #008FF7;
@@ -72,7 +72,7 @@ $white-color: #ffffff;
 
   .headerDropdown {
     margin-right: 10%;
-    
+
     .dropdown-menu {
       right: 0 !important;
     }
@@ -83,7 +83,7 @@ $white-color: #ffffff;
   .button {
     color: #008FF7;
     text-align: center;
-    
+
     border: 1px solid #008FF7;
     border-radius: 30px;
     background-color: #FFFFFF;
@@ -98,8 +98,7 @@ $white-color: #ffffff;
   button[disabled] {
     text-align: center;
     color: grey;
-    padding: 1% 10% 1% 10%;
-    
+
     border: 1px solid grey;
     border-radius: 30px;
     background-color: #FFFFFF;
@@ -111,8 +110,7 @@ $white-color: #ffffff;
   button[disabled]:hover{
     text-align: center;
     color: grey;
-    padding: 1% 10% 1% 10%;
-    
+
     border: 1px solid grey;
     border-radius: 30px;
     background-color: #FFFFFF;
@@ -133,13 +131,15 @@ $white-color: #ffffff;
     font-size: 16px;
     text-align: center;
     color: #008FF7;
-    
+    float: left;
     border: 1px solid #008FF7;
     box-sizing: border-box;
     border-radius: 30px;
     background-color: #FFFFFF;
-    padding: 1% 10% 1% 10% ;
-    margin: 5% 5% 5% 5%;
+    padding:10px ;
+    width: 170px;
+    height: 70px;
+    margin: 10px;
     opacity: 1;
     transition: 0.4s;
   }
@@ -159,7 +159,7 @@ $white-color: #ffffff;
     line-height: 15px;
     text-align: center;
     color: #008FF7;
-    
+
     border: 1px solid #008FF7;
     box-sizing: border-box;
     border-radius: 30px;
@@ -175,7 +175,7 @@ $white-color: #ffffff;
     line-height: 15px;
     text-align: center;
     color: #008FF7;
-    
+
     border: 1px solid #008FF7;
     box-sizing: border-box;
     border-radius: 30px;
@@ -186,7 +186,7 @@ $white-color: #ffffff;
   .buttonAddMoreTokens {
     text-align: center;
   }
-  
+
   .mainImage {
     border-radius: 50%;
     margin-left: 25%;
@@ -194,7 +194,7 @@ $white-color: #ffffff;
     background: url('./img/bitcoinHand.png');
     position: relative;
   }
-  
+
   #mainImageCircle {
     border-radius: 50%;
     margin-top: 40%;
@@ -221,10 +221,10 @@ $white-color: #ffffff;
     font-size: 16px;
     line-height: 19px;
     /* identical to box height */
-    
+
     display: flex;
     align-items: center;
-    
+
     color: #000000;
   }
 
@@ -439,16 +439,16 @@ $white-color: #ffffff;
   }
 
 }
-  
+
   // mobile styles
   @media (max-width: 767.98px) {
     footer {
       margin-top: -75px;
-  
+
       .footer-top {
         padding-top: 0 !important;
       }
     }
   }
-  
+
 }
