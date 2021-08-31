@@ -7,7 +7,7 @@ export const addNetwork = (params: any) =>
     .then(() => {
       console.log('Metamask closed')
     })
-export const onChainChanged = (toStep3:() => void, toStep4:() => void) => window.ethereum.on('chainChanged', (selectedChainId:string) => {
+export const configureOnChainChanged = (toStep3:() => void, toStep4:() => void) => window.ethereum.on('chainChanged', (selectedChainId:string) => {
   const envChainId:number = parseInt(process.env.REACT_APP_ENVIRONMENT_ID!)
   const formattedEnvChainId = '0x' + envChainId?.toString(16)
   if (selectedChainId !== formattedEnvChainId) {
