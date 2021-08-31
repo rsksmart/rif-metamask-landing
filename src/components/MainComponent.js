@@ -5,7 +5,7 @@ import {
 import bitcoinHandImage from '../img/bitcoinHand.png'
 import FooterComponent from './FooterComponent'
 import HeaderComponent from './HeaderComponent'
-import { addRskTestnet, addRskMainnet, getAccounts, getNet, addTestnetRifToken, addTestnetDocToken, addTestnetBProToken, onChainChanged, isMetaMaskInstalled } from '../commons/metamask'
+import { addRskTestnet, addRskMainnet, getAccounts, getNet, addTestnetRifToken, addTestnetDocToken, addTestnetBProToken, configureOnChainChanged, isMetaMaskInstalled } from '../commons/metamask'
 import DownloadComponent from './DownloadComponent'
 import ConnectionComponent from './ConnectionComponent'
 import NetworkComponent from './NetworkComponent'
@@ -35,7 +35,7 @@ class MainComponent extends Component {
   }
 
   componentDidMount () {
-    onChainChanged(this.toNetwork, this.toTokens)
+    configureOnChainChanged(this.toNetwork, this.toTokens)
   }
 
   async connectToRSK () {
