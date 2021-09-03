@@ -56,3 +56,4 @@ yarn build # to use your own config file
 - [Using custom networks with MetaMask article](https://metamask.zendesk.com/hc/en-us/articles/360056196151-Using-custom-networks-with-MetaMask)
 - [wallet_addEthereumChain](https://docs.metamask.io/guide/rpc-api.html#other-rpc-methods)
 - [wallet_watchAsset](https://docs.metamask.io/guide/rpc-api.html#wallet-watchasset)
+- Token lists: [`@rsksmart/rsk-contract-metadata`](https://github.com/rsksmart/rsk-contract-metadata) & [`@rsksmart/rsk-testnet-contract-metadata`](https://github.com/rsksmart/rsk-testnet-contract-metadata)
