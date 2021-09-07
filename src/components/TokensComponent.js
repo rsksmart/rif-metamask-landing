@@ -22,7 +22,7 @@ for (const token of metadataTokens) {
 }
 
 function addMetadataToken (metadataToken) {
-  addCustomTokens(isMainnet, metadataToken)
+  addCustomTokens(metadataToken)
 }
 
 const AddTokenButton = ({ metadataToken, disabled }) => <button

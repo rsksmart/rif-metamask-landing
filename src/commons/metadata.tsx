@@ -8,9 +8,4 @@ export interface ITokenMetadata {
   decimals: number
 }
 
-export const getURLtoTokenImg = (isMainnet: boolean) => {
-  if (isMainnet) {
-    return process.env.REACT_APP_URL_TO_METADATA_MAIN_IMAGES
-  }
-  return process.env.REACT_APP_URL_TO_METADATA_TEST_IMAGES
-}
+export const getURLtoTokenImg = () => process.env.REACT_APP_URL_IMAGES
