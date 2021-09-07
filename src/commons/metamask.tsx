@@ -104,9 +104,9 @@ export const addToken = (params: any) =>
       console.log(error)
     })
 
-export const addCustomTokens = (isMainnet: boolean, metaMap:ITokenMetadata) => {
+export const addCustomTokens = (metaMap:ITokenMetadata) => {
   if (metaMap) {
-    const img = getURLtoTokenImg(isMainnet) + metaMap.logo
+    const img = getURLtoTokenImg() + metaMap.logo
 
     addToken({
       type: 'ERC20',
