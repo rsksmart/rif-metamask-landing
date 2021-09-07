@@ -57,3 +57,12 @@ yarn build # to use your own config file
 - [wallet_addEthereumChain](https://docs.metamask.io/guide/rpc-api.html#other-rpc-methods)
 - [wallet_watchAsset](https://docs.metamask.io/guide/rpc-api.html#wallet-watchasset)
 - Token lists: [`@rsksmart/rsk-contract-metadata`](https://github.com/rsksmart/rsk-contract-metadata) & [`@rsksmart/rsk-testnet-contract-metadata`](https://github.com/rsksmart/rsk-testnet-contract-metadata)
+
+### How to add my tokens to the list?
+
+You neeed to make a PR to RSK **token lists**: [`@rsksmart/rsk-contract-metadata`](https://github.com/rsksmart/rsk-contract-metadata) & [`@rsksmart/rsk-testnet-contract-metadata`](https://github.com/rsksmart/rsk-testnet-contract-metadata). Then, send a PR to this repo updating the package version.
+
+### How to show my tokens by default?
+
+Use the **smart link** appending `?tokens=0x2d9...A1F,0xF4d...a61` to show your dApp tokens by default. For example, go to [`https://metamask-landing.rifos.org/?tokens=0x2d919f19D4892381d58EdEbEcA66D5642ceF1A1F,0xF4d27C56595eD59B66cC7f03CFF5193E4Bd74a61`](https://metamask-landing.rifos.org/?tokens=0x2d919f19D4892381d58EdEbEcA66D5642ceF1A1F,0xF4d27C56595eD59B66cC7f03CFF5193E4Bd74a61) that shows Money on Chain tokens).
+
