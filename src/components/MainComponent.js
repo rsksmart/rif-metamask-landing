@@ -5,7 +5,7 @@ import {
 import bitcoinHandImage from '../img/bitcoinHand.png'
 import FooterComponent from './FooterComponent'
 import HeaderComponent from './HeaderComponent'
-import { addRskTestnet, addRskMainnet, getAccounts, getNet, addTestnetRifToken, addTestnetDocToken, addTestnetBProToken, onChainChanged, isMetaMaskInstalled } from '../commons/metamask'
+import { addRskTestnet, addRskMainnet, getAccounts, getNet, addTestnetRifToken, addTestnetDocToken, addTestnetBProToken, configureOnChainChanged, isMetaMaskInstalled } from '../commons/metamask'
 import DownloadComponent from './DownloadComponent'
 import ConnectionComponent from './ConnectionComponent'
 import NetworkComponent from './NetworkComponent'
@@ -27,23 +27,26 @@ class MainComponent extends Component {
   async toNetwork () {
     const accounts = await getAccounts()
     const net = await getNet()
-    console.log(net)
-    console.log(process.env.REACT_APP_ENVIRONMENT_ID)
     this.setState({
       step: net === process.env.REACT_APP_ENVIRONMENT_ID ? STEP_4 : STEP_3,
       address: accounts[0],
       net
     })
-    onChainChanged(this.toNetwork)
   }
 
-  async toTokens () {
+  componentDidMount () {
+    configureOnChainChanged(this.toNetwork, this.toTokens)
+  }
+
+  async connectToRSK () {
     switch (process.env.REACT_APP_ENVIRONMENT_ID) {
       case '30': await addRskMainnet(); break
       case '31': await addRskTestnet(); break
       case '8545': await addRskTestnet(); break
     }
+  }
 
+  async toTokens () {
     const net = await getNet()
     this.setState({ step: STEP_4, net })
   }
@@ -75,7 +78,7 @@ class MainComponent extends Component {
 
             <DownloadComponent disabled={!(this.state.step === STEP_1)} />
             <ConnectionComponent disabled={!(this.state.step === STEP_2)} onChildComponentClick={this.toNetwork} />
-            <NetworkComponent disabled={!(this.state.step === STEP_3)} step={this.state.step} net={this.state.net} onChildComponentClick={this.toTokens} />
+            <NetworkComponent disabled={!(this.state.step === STEP_3)} step={this.state.step} net={this.state.net} onChildComponentClick={this.connectToRSK} />
             <TokensComponent disabled={!(this.state.step === STEP_4)} net={this.state.net} />
           </Col>
           <Col md={{ span: 3, offset: 12 }}>
