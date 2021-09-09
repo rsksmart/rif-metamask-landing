@@ -35,7 +35,9 @@ class MainComponent extends Component {
   }
 
   componentDidMount () {
-    configureOnChainChanged(this.toNetwork, this.toTokens)
+    if (window.ethereum) {
+      configureOnChainChanged(this.toNetwork, this.toTokens)
+    }
   }
 
   async connectToRSK () {
@@ -81,10 +83,10 @@ class MainComponent extends Component {
             <NetworkComponent disabled={!(this.state.step === STEP_3)} step={this.state.step} net={this.state.net} onChildComponentClick={this.connectToRSK} />
             <TokensComponent disabled={!(this.state.step === STEP_4)} net={this.state.net} />
           </Col>
-          <Col md={{ span: 3, offset: 12 }}>
+          <Col className='col-sm-3 d-none d-sm-none d-md-block'>
             <Image className="mainImage" src={bitcoinHandImage} />
           </Col>
-          <Col md={{ span: 2, offset: 12 }}>
+          <Col className='col-sm-2 d-none d-sm-none d-md-block'>
             <div id="mainImageCircle"/>
           </Col>
         </Row>

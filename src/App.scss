@@ -44,6 +44,9 @@ $white-color: #ffffff;
     box-sizing: border-box;
     border-radius: 3px;
     padding: 5px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
   }
 
   .headerAdress {
@@ -124,7 +127,10 @@ $white-color: #ffffff;
     color: white;
     box-shadow: 5px 5px 2px grey;
   }
+  .bottom-column{
+    padding: 5px;
 
+  }
   .buttonAddToken {
     font-family: Quicksand;
     font-style: normal;
@@ -137,11 +143,13 @@ $white-color: #ffffff;
     border-radius: 30px;
     background-color: #FFFFFF;
     padding:10px ;
-    width: 170px;
+    width: 100%;
     height: 70px;
-    margin: 10px;
     opacity: 1;
     transition: 0.4s;
+  }
+  .tokens-bottom-row{
+    margin-top: 20px;
   }
 
   .buttonAddToken:hover {
@@ -193,6 +201,7 @@ $white-color: #ffffff;
     margin-top: 25%;
     background: url('./img/bitcoinHand.png');
     position: relative;
+
   }
 
   #mainImageCircle {
@@ -227,6 +236,9 @@ $white-color: #ffffff;
     align-items: center;
 
     color: #000000;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
 
@@ -242,8 +254,7 @@ $white-color: #ffffff;
 .powered_by {
   width: 250px;
   height: auto;
-  margin-bottom: 30px;
-  margin-left: 5%;
+  margin: 20px 0 30px 0;
 }
 
 #footer .footer-top {
@@ -253,7 +264,6 @@ $white-color: #ffffff;
 
 #footer .footer-top .footer-info {
   margin-bottom: 30px;
-  margin-left: 20%;
 }
 
 #footer .footer-top .footer-info p {
@@ -390,7 +400,7 @@ $white-color: #ffffff;
   color: white;
   font-size: 12px;
   padding: 0px;
-  margin-left: 5%;
+
 }
 
 #footer .credits {
