@@ -7,7 +7,7 @@ const DownloadComponent = ({ disabled }) =>
       <Col md={{ span: 1, offset: 1 }} >
         <span className="bullet">1</span>
       </Col>
-      <Col md={{ span: 8, offset: 12 }}>
+      <Col>
         <Row>
           <div className="centerDivButtons">
             <h2 className="step" >Download and setup Metamask. </h2>

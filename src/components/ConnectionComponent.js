@@ -7,7 +7,7 @@ const ConnectionComponent = ({ onChildComponentClick, disabled }) => {
       <Col md={{ span: 1, offset: 1 }} >
         <span className="bullet">2</span>
       </Col>
-      <Col md={{ span: 8, offset: 12 }}>
+      <Col>
         <Row>
           <div className="centerDivButtons">
             <h2 className="step" >Connect your Metamask wallet. </h2>

@@ -7,7 +7,7 @@ const NetworkComponent = ({ disabled, onChildComponentClick }) =>
       <Col md={{ span: 1, offset: 1 }} >
         <span className="bullet">3</span>
       </Col>
-      <Col md={{ span: 8, offset: 12 }}>
+      <Col>
         <Row>
           <div className="centerDivButtons">
             <h2 className="step" >Click here to add the Mainnet or Testnet, or change to that network if you already have them configured.</h2>
