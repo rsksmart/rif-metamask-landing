@@ -222,7 +222,8 @@ $white-color: #ffffff;
     line-height: 19px;
     /* identical to box height */
 
-    display: flex;
+    display: block;
+    margin-bottom: 5px;
     align-items: center;
 
     color: #000000;
