@@ -26,14 +26,14 @@ function addMetadataToken (metadataToken) {
 }
 
 const AddTokenButton = ({ metadataToken, disabled }) =>
-    <Col className="bottom-column col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+  <Col className="bottom-column col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
     <button
       key={metadataToken.symbol}
       className="buttonAddToken "
       onClick={() => addMetadataToken(metadataToken)}
       disabled={disabled} >{`Add ${metadataToken.symbol} Token`}
     </button>
-    </Col>
+  </Col>
 
 class TokensComponent extends Component {
   constructor (props) {
@@ -59,17 +59,17 @@ class TokensComponent extends Component {
 
   render () {
     return (
-        <Container className="marginNextStep">
+      <Container className="marginNextStep">
         <Row className="centerDivButtons">
 
           <Row>
             <h2 className="step" ><span className="bullet">4</span>Add the RSK tokens! Click below to add the {isMainnet ? 'Mainnet' : 'Testnet'} RSK compatible tokens. </h2>
           </Row>
           <Row className="tokens-bottom-row">
-                {metadataTokensToShow.map(metadataToken => <AddTokenButton key={metadataToken.address} metadataToken={metadataToken} disabled={this.props.disabled} />)}
-                {this.state.display && metadataTokensToHide.map(metadataToken => <AddTokenButton key={metadataToken.address} metadataToken={metadataToken} disabled={this.props.disabled} />)}
-                <Col hidden={this.state.display} className="bottom-column col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4"><button key='add' onClick={this.handleAddButtonClick} className="buttonAddToken" >+</button></Col>
-                <Col hidden={!this.state.display} className="bottom-column col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4"><button key='remove' onClick={this.handleRemoveButtonClick} className="buttonAddToken" >-</button></Col>
+            {metadataTokensToShow.map(metadataToken => <AddTokenButton key={metadataToken.address} metadataToken={metadataToken} disabled={this.props.disabled} />)}
+            {this.state.display && metadataTokensToHide.map(metadataToken => <AddTokenButton key={metadataToken.address} metadataToken={metadataToken} disabled={this.props.disabled} />)}
+            <Col hidden={this.state.display} className="bottom-column col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4"><button key='add' onClick={this.handleAddButtonClick} className="buttonAddToken" >+</button></Col>
+            <Col hidden={!this.state.display} className="bottom-column col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4"><button key='remove' onClick={this.handleRemoveButtonClick} className="buttonAddToken" >-</button></Col>
           </Row>
 
         </Row>
