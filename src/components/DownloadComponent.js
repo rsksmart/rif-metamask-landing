@@ -3,20 +3,16 @@ import { Col, Container, Row } from 'react-bootstrap'
 
 const DownloadComponent = ({ disabled }) =>
   <Container className="marginNextStep">
-    <Row>
-      <Col md={{ span: 1, offset: 1 }} >
-        <span className="bullet">1</span>
-      </Col>
-      <Col md={{ span: 8, offset: 12 }}>
-        <Row>
-          <div className="centerDivButtons">
-            <h2 className="step" >Download and setup Metamask. </h2>
-            <Col md={{ span: 8, offset: 2 }}>
-              <button onClick={ () => { window.open('https://metamask.io/download.html') } } target="_blank" rel="noreferrer" className="button" disabled={disabled} >Download Metamask</button>
-            </Col>
-          </div>
-        </Row>
-      </Col>
+    <Row className="centerDivButtons">
+      <Row>
+        <h2 className="step" ><span className="bullet">1</span> Download and setup Metamask. </h2>
+      </Row>
+      <Row>
+        <Col>
+          <button onClick={ () => { window.open('https://metamask.io/download.html') } } target="_blank" rel="noreferrer" className="button" disabled={disabled} >Download Metamask</button>
+        </Col>
+      </Row>
+
     </Row>
   </Container>
 
