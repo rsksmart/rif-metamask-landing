@@ -47,6 +47,7 @@ $white-color: #ffffff;
     margin-right: 10px;
     position: absolute;
     left: 0;
+    top: -5px;
   }
 
   .headerAdress {
@@ -232,8 +233,9 @@ $white-color: #ffffff;
     /* identical to box height */
 
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     align-items: center;
+    text-align: left;
 
     color: #000000;
     position: relative;
