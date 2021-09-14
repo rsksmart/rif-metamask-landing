@@ -76,7 +76,7 @@ class MainComponent extends Component {
                 Connect Metamask to RSK
             </header>
             <br/>
-            <p className="toolExplanation">Use this tool to connect your Metamask browser wallet to the RSK network. After this steps you will be able to send tokens and connect to dapps.</p>
+            <p className="toolExplanation">Use this tool to connect your Metamask browser wallet to the RSK network. After these steps you will be able to send tokens and connect to dapps.</p>
 
             <DownloadComponent disabled={!(this.state.step === STEP_1)} />
             <ConnectionComponent disabled={!(this.state.step === STEP_2)} onChildComponentClick={this.toNetwork} />
