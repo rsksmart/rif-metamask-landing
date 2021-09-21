@@ -4,6 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { addCustomTokens } from '../commons/metamask'
 import contractMapMainnet from '@rsksmart/rsk-contract-metadata'
 import contractMapTestNet from '@rsksmart/rsk-testnet-contract-metadata'
+import { Trans } from 'react-i18next'
 
 const isMainnet = process.env.REACT_APP_ENVIRONMENT_ID === '30'
 
@@ -31,7 +32,7 @@ const AddTokenButton = ({ metadataToken, disabled }) =>
       key={metadataToken.symbol}
       className="buttonAddToken "
       onClick={() => addMetadataToken(metadataToken)}
-      disabled={disabled} >{`Add ${metadataToken.symbol} Token`}
+      disabled={disabled} ><Trans>Add</Trans> {`${metadataToken.symbol}`} <Trans>Token</Trans>
     </button>
   </Col>
 
@@ -63,7 +64,7 @@ class TokensComponent extends Component {
         <Row className="centerDivButtons">
 
           <Row>
-            <h2 className="step" ><span className="bullet">4</span>Add the RSK tokens! Click below to add the {isMainnet ? 'Mainnet' : 'Testnet'} RSK compatible tokens. </h2>
+            <h2 className="step" ><span className="bullet">4</span><Trans>Add the RSK tokens! Click below to add the</Trans> {isMainnet ? 'Mainnet' : 'Testnet'} <Trans>RSK compatible tokens.</Trans> </h2>
           </Row>
           <Row className="tokens-bottom-row">
             {metadataTokensToShow.map(metadataToken => <AddTokenButton key={metadataToken.address} metadataToken={metadataToken} disabled={this.props.disabled} />)}

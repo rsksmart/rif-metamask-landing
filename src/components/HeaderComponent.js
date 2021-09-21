@@ -2,7 +2,13 @@ import React from 'react'
 import {
   Navbar, Nav, Container, Image, NavItem, NavDropdown
 } from 'react-bootstrap'
+import { Trans, useTranslation } from 'react-i18next'
 import rskLogo from '../img/logoColor.svg'
+
+function transTitle (s) {
+  const { t } = useTranslation()
+  return t(s)
+}
 
 const HeaderComponent = ({ address, net }) =>
   <Container>
@@ -15,11 +21,11 @@ const HeaderComponent = ({ address, net }) =>
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <NavDropdown title="About" id="navbarScrollingDropdown" className="headerDropdown">
-            <NavDropdown.Item target="_blank" rel="noreferrer" href="https://github.com/rsksmart/rif-metamask-landing#how-to-add-my-tokens-to-the-list">How to list your tokens</NavDropdown.Item>
-            <NavDropdown.Item target="_blank" rel="noreferrer" href="https://github.com/rsksmart/rif-metamask-landing#how-to-show-my-tokens-by-default">How to customize with your tokens</NavDropdown.Item>
-            <NavDropdown.Item target="_blank" rel="noreferrer" href="https://github.com/rsksmart/rif-metamask-landing#readme">Read more</NavDropdown.Item>
-            <NavDropdown.Item target="_blank" rel="noreferrer" href="https://github.com/rsksmart/rif-metamask-landing">Github repo</NavDropdown.Item>
+          <NavDropdown title={transTitle('About')} id="navbarScrollingDropdown" className="headerDropdown">
+            <NavDropdown.Item target="_blank" rel="noreferrer" href="https://github.com/rsksmart/rif-metamask-landing#how-to-add-my-tokens-to-the-list"><Trans>How to list your tokens</Trans></NavDropdown.Item>
+            <NavDropdown.Item target="_blank" rel="noreferrer" href="https://github.com/rsksmart/rif-metamask-landing#how-to-show-my-tokens-by-default"><Trans>How to customize with your tokens</Trans></NavDropdown.Item>
+            <NavDropdown.Item target="_blank" rel="noreferrer" href="https://github.com/rsksmart/rif-metamask-landing#readme"><Trans>Read more</Trans></NavDropdown.Item>
+            <NavDropdown.Item target="_blank" rel="noreferrer" href="https://github.com/rsksmart/rif-metamask-landing"><Trans>Github repo</Trans></NavDropdown.Item>
           </NavDropdown>
         </Nav>
 

@@ -10,6 +10,7 @@ import DownloadComponent from './DownloadComponent'
 import ConnectionComponent from './ConnectionComponent'
 import NetworkComponent from './NetworkComponent'
 import TokensComponent from './TokensComponent'
+import { Trans } from 'react-i18next'
 
 const STEP_1 = '1'
 const STEP_2 = '2'
@@ -73,10 +74,10 @@ class MainComponent extends Component {
         <Row>
           <Col md={7}>
             <header className="App-header">
-                Connect Metamask to RSK
+              <Trans>Connect Metamask to RSK</Trans>
             </header>
             <br/>
-            <p className="toolExplanation">Use this tool to connect your Metamask browser wallet to the RSK network. After these steps you will be able to send tokens and connect to dapps.</p>
+            <p className="toolExplanation"><Trans>Use this tool to connect your Metamask browser wallet to the RSK network. After this steps you will be able to send tokens and connect to dapps.</Trans></p>
 
             <DownloadComponent disabled={!(this.state.step === STEP_1)} />
             <ConnectionComponent disabled={!(this.state.step === STEP_2)} onChildComponentClick={this.toNetwork} />
