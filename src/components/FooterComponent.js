@@ -3,6 +3,7 @@ import {
   Container, Image, Col, Row
 } from 'react-bootstrap'
 import logo from '../img/powered_by.png'
+import { Trans } from 'react-i18next'
 
 const FooterComponent = () =>
   <footer id="footer">
@@ -18,7 +19,7 @@ const FooterComponent = () =>
             <Row>
               <Col md="7">
                 <div className="footer-info">
-                  <p>RIF enables broad interoperability and faster time-to-deployment, bridging the gap between blockchain technologies and their mass-market adoption.</p>
+                  <p><Trans>RIF enables broad interoperability and faster time-to-deployment, bridging the gap between blockchain technologies and their mass-market adoption.</Trans></p>
                 </div>
               </Col>
               <Col md="5">
@@ -31,34 +32,16 @@ const FooterComponent = () =>
                 <div className="footer-links">
                   <ul>
                     <li>
-                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/assets/whitepapers/rif-whitepaper-en.pdf" >Whitepaper</a>
+                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/assets/whitepapers/rif-whitepaper-en.pdf" ><Trans>Whitepaper</Trans></a>
                     </li>
                     <li>
-                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/blog/" >Blog</a>
+                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/blog/" ><Trans>Blog</Trans></a>
                     </li>
                     <li>
-                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/roadmap" >Roadmap</a>
+                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/roadmap" ><Trans>Roadmap</Trans></a>
                     </li>
                     <li>
-                      <a target="_blank" rel="noreferrer" href="https://github.com/riflabs" >Github</a>
-                    </li>
-                  </ul>
-                </div>
-              </Col>
-              <Col md="4">
-                <div className="footer-links">
-                  <ul>
-                    <li>
-                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/faqs" >FAQ´s</a>
-                    </li>
-                    <li>
-                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/assets/guidelines/RIF_FullBrandGuidelines_En.pdf" >Brand Guidelines</a>
-                    </li>
-                    <li>
-                      <a target="_blank" rel="noreferrer" href="https://www.rsk.co/" className="medium">RSK</a>
-                    </li>
-                    <li>
-                      <a target="_blank" rel="noreferrer" href="https://www.iovlabs.org/" className="medium">About IOVLabs</a>
+                      <a target="_blank" rel="noreferrer" href="https://github.com/riflabs" ><Trans>Github</Trans></a>
                     </li>
                   </ul>
                 </div>
@@ -67,13 +50,31 @@ const FooterComponent = () =>
                 <div className="footer-links">
                   <ul>
                     <li>
-                      <a target="_blank" rel="noreferrer" href="https://www.iovlabs.org/contact.html" className="medium">Contact IOVLabs</a>
+                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/faqs" ><Trans>FAQ´s</Trans></a>
                     </li>
                     <li>
-                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/terms-conditions" >Terms & Conditions</a>
+                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/assets/guidelines/RIF_FullBrandGuidelines_En.pdf" ><Trans>Brand Guidelines</Trans></a>
                     </li>
                     <li>
-                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/privacy-policy" >Privacy Policy</a>
+                      <a target="_blank" rel="noreferrer" href="https://www.rsk.co/" className="medium"><Trans>RSK</Trans></a>
+                    </li>
+                    <li>
+                      <a target="_blank" rel="noreferrer" href="https://www.iovlabs.org/" className="medium"><Trans>About IOVLabs</Trans></a>
+                    </li>
+                  </ul>
+                </div>
+              </Col>
+              <Col md="4">
+                <div className="footer-links">
+                  <ul>
+                    <li>
+                      <a target="_blank" rel="noreferrer" href="https://www.iovlabs.org/contact.html" className="medium"><Trans>Contact IOVLabs</Trans></a>
+                    </li>
+                    <li>
+                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/terms-conditions" ><Trans>Terms & Conditions</Trans></a>
+                    </li>
+                    <li>
+                      <a target="_blank" rel="noreferrer" href="http://www.rifos.org/privacy-policy" ><Trans>Privacy Policy</Trans></a>
                     </li>
                   </ul>
                 </div>
@@ -88,8 +89,8 @@ const FooterComponent = () =>
         <Row>
           <Col className="copyright">
             <p >
-              {`Copyright © ${new Date().getFullYear()} `}
-                    RSK Labs. All rights reserved.
+              <Trans>Copyright</Trans>{` © ${new Date().getFullYear()} `}
+              <Trans>RSK Labs. All rights reserved.</Trans>
             </p>
           </Col>
         </Row>
