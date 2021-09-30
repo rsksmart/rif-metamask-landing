@@ -1,47 +1,22 @@
 [
    {
-      "name":"MyCrypto",
-      "image":"https://rsk.co/img/wallets/1-mycrypto.png",
-      "link":"https://mycrypto.com/account"
+      "name":"Binance",
+      "image":"https://logodownload.org/wp-content/uploads/2021/03/binance-logo.png",
+      "link":"https://www.binance.com/en"
    },
    {
-      "name":"Math Wallet",
-      "image":"https://developers.rsk.co/assets/img/rsk/wallets/MathWallet_Logo_Vertical_Black.png",
-      "link":"https://mathwallet.org/en-us/"
+      "name":"Coinbase",
+      "image":"https://logowik.com/content/uploads/images/coinbase-new-20217954.jpg",
+      "link":"https://www.coinbase.com/"
    },
    {
-      "name":"Nifty Wallet",
-      "image":"https://lh3.googleusercontent.com/vzJy_6bmNXDfiwFePYMfKPjfLMJsQFzEz5Ot3dtZ9Pk_0kPyLifJuQ0n5DnUoUGuKbOhTkkcX_ZyuJOaPaawHT0D=w128-h128-e365-rj-sc0x00ffffff",
-      "link":"https://chrome.google.com/webstore/detail/nifty-wallet/jbdaocneiiinmjbjlgalhcelgbejmnid?hl=en"
+      "name":"Gemini",
+      "image":"https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Gemini_%28digital_currency_exchange%29_logo.svg/1280px-Gemini_%28digital_currency_exchange%29_logo.svg.png",
+      "link":"https://www.gemini.com/"
    },
    {
-      "name":"D'cent Wallet",
-      "image":"https://rsk.co/img/wallets/5-dcent.png",
-      "link":"https://dcentwallet.com/"
-   },
-   {
-      "name":"Defiant Wallet",
-      "image":"https://developers.rsk.co/assets/img/rsk/wallets/defiant-logo.png",
-      "link":"https://www.defiantapp.tech/"
-   },
-   {
-      "name":"Money on Chain",
-      "image":"https://moneyonchain.com/wp-content/uploads/2020/06/isologochico.png",
-      "link":"https://moneyonchain.com/"
-   },
-   {
-      "name":"RIF on Chain",
-      "image":"https://moneyonchain.com/wp-content/uploads/2020/10/logo_roc.svg",
-      "link":"https://moneyonchain.com/rif-on-chain/"
-   },
-   {
-      "name":"Bleumi Pay",
-      "image":"https://bleumi.com/uploads-ssl.webflow.com/5f0ea53e824f8d2cd161752e/5f0ed8885e1b0e32974f7bf6_Bleumi_dark.png",
-      "link":"https://bleumi.com/"
-   },
-   {
-      "name":"rWallet",
-      "image":"https://developers.rsk.co/assets/img/rsk_logo.svg",
-      "link":"https://developers.rsk.co/wallet/rwallet/"
+      "name":"Crypto",
+      "image":"https://www.finimize.com/wp/wp-content/uploads/2020/07/FOR-LIGHT-BK_Crypto.com_Blue-horizontal-Susan-Lo.png",
+      "link":"https://crypto.com/"
    }
 ]

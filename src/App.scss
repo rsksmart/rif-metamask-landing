@@ -480,17 +480,17 @@ $white-color: #ffffff;
       .carousel-control-next-icon:after {
         content: '>';
         font-size: 45px;
-        color: #666666;
+        color:  #008FF7;
       }
 
       .carousel-control-prev-icon:after {
         content: '<';
         font-size: 45px;
-        color: #666666;
+        color:  #008FF7;
       }
 
       .carousel-indicators li {
-        background-color: #666666;
+        background-color:  #008FF7;
       }
 
       .carousel-inner {
@@ -520,7 +520,7 @@ $white-color: #ffffff;
 
         a:hover {
           p {
-            color: #0044ff;
+            color: #008FF7;
           }
 
           .image-container {
