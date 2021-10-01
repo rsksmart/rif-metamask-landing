@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Trans } from 'react-i18next'
-import WalletCarousel from './WalletCarousel'
-import wallets from '../config/wallets.json'
+import ExchangeCarousel from './ExchangeCarousel'
+import exchanges from '../config/exchanges.json'
 
-const isMainnet = process.env.REACT_APP_ENVIRONMENT_ID === '31'
+const isMainnet = process.env.REACT_APP_ENVIRONMENT_ID === '30'
 class CarouselComponent extends Component {
   constructor (props) {
     super(props)
@@ -33,11 +33,11 @@ class CarouselComponent extends Component {
         <Row className="centerDivButtons">
 
           <Row>
-            <h2 className="step" ><span className="bullet">5</span><Trans>Choose your favourite exchange and operate with your tokens.</Trans> </h2>
+            <h2 className="step" ><span className="bullet">5</span> {isMainnet ? <Trans>Choose your favourite exchange and operate with your tokens.</Trans> : <Trans>Go to RSK Faucet and obtain test tokens.</Trans> } </h2>
           </Row>
           <Row>
             <Col>
-              {isMainnet ? <WalletCarousel wallets={wallets} disabled={this.props.disabled} /> : <button onClick={ () => { window.open('https://faucet.rsk.co/') } } target="_blank" rel="noreferrer" className="button" disabled={this.props.disabled} ><Trans>Get test RBTC</Trans></button> }
+              {isMainnet ? <ExchangeCarousel exchanges={exchanges} disabled={this.props.disabled} /> : <button onClick={ () => { window.open('https://faucet.rsk.co/') } } target="_blank" rel="noreferrer" className="button" disabled={this.props.disabled} ><Trans>Get test RBTC</Trans></button> }
             </Col>
           </Row>
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import propTypes from 'prop-types'
 import { Carousel, Row, Col } from 'react-bootstrap'
 
-const WalletCarousel = ({ wallets, strings }) => {
+const ExchangeCarousel = ({ exchanges }) => {
   const [index, setIndex] = useState(0)
 
   const handleSelect = (selectedIndex) => {
@@ -10,15 +10,15 @@ const WalletCarousel = ({ wallets, strings }) => {
   }
 
   /**
-   * Group the wallets into 3s:
+   * Group the exchanges into 3s:
    */
-  const walletsByThree = []
-  wallets.forEach((wallet, i) => {
+  const exchangesByThree = []
+  exchanges.forEach((exchange, i) => {
     if (i % 3 === 0) {
       // new set
-      walletsByThree[Math.floor(i / 3)] = [wallet]
+      exchangesByThree[Math.floor(i / 3)] = [exchange]
     } else {
-      walletsByThree[Math.floor(i / 3)].push(wallet)
+      exchangesByThree[Math.floor(i / 3)].push(exchange)
     }
   })
 
@@ -35,12 +35,12 @@ const WalletCarousel = ({ wallets, strings }) => {
   }
 
   return (
-    <div className="supported-wallets">
-      <Carousel activeIndex={index} onSelect={handleSelect} controls className="wallet-carousel">
-        {walletsByThree.map(walletGroup => (
-          <Carousel.Item key={walletGroup[0].name}>
+    <div className="supported-exchanges">
+      <Carousel activeIndex={index} onSelect={handleSelect} controls className="exchange-carousel">
+        {exchangesByThree.map(exchangeGroup => (
+          <Carousel.Item key={exchangeGroup[0].name}>
             <Row>
-              {walletGroup.map(wallet => SingleItem(wallet))}
+              {exchangeGroup.map(exchange => SingleItem(exchange))}
             </Row>
           </Carousel.Item>
         ))}
@@ -49,12 +49,12 @@ const WalletCarousel = ({ wallets, strings }) => {
   )
 }
 
-WalletCarousel.propTypes = {
-  wallets: propTypes.arrayOf(propTypes.shape({
+ExchangeCarousel.propTypes = {
+  exchanges: propTypes.arrayOf(propTypes.shape({
     name: propTypes.string.isRequired,
     link: propTypes.string.isRequired,
     image: propTypes.string.isRequired
   })).isRequired
 }
 
-export default WalletCarousel
+export default ExchangeCarousel
