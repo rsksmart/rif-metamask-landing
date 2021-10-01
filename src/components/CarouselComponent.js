@@ -4,7 +4,7 @@ import { Trans } from 'react-i18next'
 import WalletCarousel from './WalletCarousel'
 import wallets from '../config/wallets.json'
 
-const isMainnet = process.env.REACT_APP_ENVIRONMENT_ID === '30'
+const isMainnet = process.env.REACT_APP_ENVIRONMENT_ID === '31'
 class CarouselComponent extends Component {
   constructor (props) {
     super(props)
@@ -37,7 +37,7 @@ class CarouselComponent extends Component {
           </Row>
           <Row>
             <Col>
-              {isMainnet ? <WalletCarousel wallets={wallets} /> : <button onClick={ () => { window.open('https://faucet.rsk.co/') } } target="_blank" rel="noreferrer" className="button" disabled={this.props.disabled} ><Trans>Get test RBTC</Trans></button> }
+              {isMainnet ? <WalletCarousel wallets={wallets} disabled={this.props.disabled} /> : <button onClick={ () => { window.open('https://faucet.rsk.co/') } } target="_blank" rel="noreferrer" className="button" disabled={this.props.disabled} ><Trans>Get test RBTC</Trans></button> }
             </Col>
           </Row>
 

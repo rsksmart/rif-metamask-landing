@@ -17,7 +17,6 @@ const STEP_1 = '1'
 const STEP_2 = '2'
 const STEP_3 = '3'
 const STEP_4 = '4'
-const STEP_5 = '5'
 
 class MainComponent extends Component {
   constructor (props) {
@@ -85,7 +84,7 @@ class MainComponent extends Component {
             <ConnectionComponent disabled={!(this.state.step === STEP_2)} onChildComponentClick={this.toNetwork} />
             <NetworkComponent disabled={!(this.state.step === STEP_3)} step={this.state.step} net={this.state.net} onChildComponentClick={this.connectToRSK} />
             <TokensComponent disabled={!(this.state.step === STEP_4)} net={this.state.net} />
-            <CarouselComponent disabled={!(this.state.step === STEP_5)} net={this.state.net} />
+            <CarouselComponent disabled={!(this.state.step === STEP_4)} net={this.state.net} />
           </Col>
           <Col className='col-sm-3 d-none d-sm-none d-md-block'>
             <Image className="mainImage" src={bitcoinHandImage} />
