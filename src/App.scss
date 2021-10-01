@@ -464,4 +464,71 @@ $white-color: #ffffff;
     }
   }
 
+  .supported-exchanges {
+    h2 {
+      text-align: center;
+    }
+
+    .exchange-carousel {
+      padding-bottom: 50px;
+
+      .carousel-control-prev, .carousel-control-next {
+        width: auto;
+        background-image:none;
+      }
+
+      .carousel-control-next-icon:after {
+        content: '>';
+        font-size: 45px;
+        color:  #008FF7;
+      }
+
+      .carousel-control-prev-icon:after {
+        content: '<';
+        font-size: 45px;
+        color:  #008FF7;
+      }
+
+      .carousel-indicators li {
+        background-color:  #008FF7;
+      }
+
+      .carousel-inner {
+        a { 
+          display: block;
+
+          p {
+            text-align: center;
+          }
+
+          .image-container {
+            display: block;
+            margin: 0 auto;
+            width: 120px;
+            height: 180px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: .5;
+          }
+        }
+
+        a {
+          color: grey;
+          text-decoration: none;
+        }
+
+        a:hover {
+          p {
+            color: #008FF7;
+          }
+
+          .image-container {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
 }

@@ -1,0 +1,22 @@
+[
+   {
+      "name":"Binance",
+      "image":"https://logodownload.org/wp-content/uploads/2021/03/binance-logo.png",
+      "link":"https://www.binance.com/en"
+   },
+   {
+      "name":"Coinbase",
+      "image":"https://logowik.com/content/uploads/images/coinbase-new-20217954.jpg",
+      "link":"https://www.coinbase.com/"
+   },
+   {
+      "name":"Gemini",
+      "image":"https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Gemini_%28digital_currency_exchange%29_logo.svg/1280px-Gemini_%28digital_currency_exchange%29_logo.svg.png",
+      "link":"https://www.gemini.com/"
+   },
+   {
+      "name":"Crypto",
+      "image":"https://www.finimize.com/wp/wp-content/uploads/2020/07/FOR-LIGHT-BK_Crypto.com_Blue-horizontal-Susan-Lo.png",
+      "link":"https://crypto.com/"
+   }
+]

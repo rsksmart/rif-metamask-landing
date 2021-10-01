@@ -40,7 +40,9 @@ const resources = {
       'Terms & Conditions': 'Terms & Conditions',
       'Privacy Policy': 'Privacy Policy',
       Copyright: 'Copyright',
-      'RSK Labs. All rights reserved.': 'RSK Labs. All rights reserved.'
+      'RSK Labs. All rights reserved.': 'RSK Labs. All rights reserved.',
+      'Choose your favourite exchange and operate with your tokens.': 'Choose your favourite exchange and operate with your tokens.',
+      'Get test RBTC': 'Get test RBTC'
     }
   }
 }
